@@ -1,0 +1,3 @@
+title=exj
+author=noway
+orientation=portrait

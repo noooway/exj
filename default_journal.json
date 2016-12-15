@@ -1,0 +1,505 @@
+{
+  "trainings": [
+    {
+      "exercises": [
+        {
+          "type": "ExerciseSetsRepsWeights", 
+          "sets": 3, 
+          "reps": [
+            "1", 
+            "2", 
+            "3"
+          ], 
+          "weights": [
+            "1", 
+            "2", 
+            "334"
+          ], 
+          "name": "Dips"
+        }
+      ]
+    }, 
+    {
+      "exercises": [
+        {
+          "type": "ExerciseSetsRepsWeights", 
+          "sets": 3, 
+          "reps": [
+            "34", 
+            "12", 
+            ""
+          ], 
+          "weights": [
+            "1", 
+            "", 
+            ""
+          ], 
+          "name": "Push ups"
+        }, 
+        {
+          "type": "ExerciseSetsRepsWeights", 
+          "sets": 3, 
+          "reps": [
+            "1", 
+            "", 
+            "123"
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "name": "Push ups"
+        }
+      ]
+    }, 
+    {
+      "exercises": [
+        {
+          "type": "ExerciseSetsRepsWeights", 
+          "sets": 3, 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "name": "Push ups"
+        }
+      ]
+    }, 
+    {
+      "exercises": [
+        {
+          "comment": "asdf", 
+          "name": "Push ups", 
+          "reps": [
+            "1", 
+            "2", 
+            "3"
+          ], 
+          "weights": [
+            "1", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Push ups", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }
+      ]
+    }, 
+    {
+      "exercises": []
+    }, 
+    {
+      "exercises": [
+        {
+          "comment": "", 
+          "name": "Distance Running", 
+          "reps": [
+            "1", 
+            "2", 
+            "3", 
+            "2"
+          ], 
+          "weights": [
+            "5", 
+            "6", 
+            "4", 
+            "3"
+          ], 
+          "sets": 4, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Pull Ups", 
+          "reps": [
+            "2", 
+            "4", 
+            "5"
+          ], 
+          "weights": [
+            "1", 
+            "2", 
+            "11"
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }
+      ]
+    }, 
+    {
+      "exercises": [
+        {
+          "comment": "asdf", 
+          "name": "Pull Ups", 
+          "reps": [
+            "1", 
+            "2", 
+            "3"
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }
+      ]
+    }, 
+    {
+      "exercises": [
+        {
+          "comment": "", 
+          "name": "Distance Running", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Dips", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }
+      ]
+    }, 
+    {
+      "exercises": []
+    }, 
+    {
+      "exercises": []
+    }, 
+    {
+      "exercises": [
+        {
+          "comment": "", 
+          "name": "Pull Ups", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Pull Ups", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }
+      ]
+    }, 
+    {
+      "exercises": [
+        {
+          "comment": "", 
+          "name": "Romanian Deadlift", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Leg Press", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Barbell Squat", 
+          "reps": [
+            "1", 
+            "2", 
+            "3"
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }
+      ]
+    }, 
+    {
+      "exercises": [
+        {
+          "comment": "", 
+          "name": "T-Bar Row", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Pull Ups", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Barbell Bench Press", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }
+      ]
+    }, 
+    {
+      "exercises": [
+        {
+          "comment": "", 
+          "name": "Romanian Deadlift", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Leg Press", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }
+      ]
+    }, 
+    {
+      "exercises": [
+        {
+          "comment": "4asdf", 
+          "name": "Deadlift", 
+          "reps": [
+            "1", 
+            "1", 
+            "3", 
+            "1"
+          ], 
+          "weights": [
+            "3", 
+            "2", 
+            "6", 
+            "2"
+          ], 
+          "sets": 4, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "asdf", 
+          "name": "Push Ups", 
+          "reps": [
+            "1", 
+            "a", 
+            "5"
+          ], 
+          "weights": [
+            "z", 
+            "3", 
+            "12"
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }
+      ]
+    }, 
+    {
+      "exercises": [
+        {
+          "comment": "", 
+          "name": "Hack Squat", 
+          "reps": [
+            "876", 
+            "", 
+            "98y", 
+            "65"
+          ], 
+          "weights": [
+            "", 
+            "", 
+            "79", 
+            "876"
+          ], 
+          "sets": 4, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Romanian Deadlift", 
+          "reps": [
+            "6564", 
+            "", 
+            "65"
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }
+      ]
+    }, 
+    {
+      "exercises": [
+        {
+          "comment": "asd", 
+          "name": "Deadlift", 
+          "reps": [
+            "1", 
+            "2", 
+            "3", 
+            "1"
+          ], 
+          "weights": [
+            "4", 
+            "5", 
+            "6", 
+            "3"
+          ], 
+          "sets": 4, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Lying Leg Curl", 
+          "reps": [
+            "1", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }
+      ]
+    }
+  ]
+}
