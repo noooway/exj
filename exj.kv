@@ -1,0 +1,220 @@
+<AppScreenManager>:
+    MenuScreen:
+        name: 'menu'
+    StartExercisingScreen:
+        name: 'start_exercising'
+    ComposeTrainingPlanScreen:
+        name: 'compose_training_plan'
+    SimpleProgramSelectionScreen:
+        name: 'simple_program_selection'
+    SimpleProgramContentScreen:
+        name: 'simple_program_content'
+    ViewProgressScreen:
+        name: 'view_progress'
+    TrainingScreen:
+        id: training
+        name: 'training'
+    SelectExerciseScreen:
+        id: select_exercise
+        name: 'select_exercise'
+    JournalOverviewScreen:
+        id: journal_overview
+        name: 'journal_overview'
+
+<MenuScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 30
+        Button:
+            text: 'Start exercising'
+            on_press: root.manager.current = 'start_exercising'
+        Button:
+            text: 'Compose training plan'
+            on_press: root.manager.current = 'compose_training_plan'
+        Button:
+            text: 'View progress'
+            on_press: root.manager.current = 'view_progress'
+        Button:
+            text: 'Quit'
+            on_press: root.save_journal_and_quit()
+
+<StartExercisingScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 30
+        Button:
+            text: 'Follow the plan'
+            on_press: root.generate_and_goto_training()
+        Button:
+            text: 'Unplanned training'
+            on_press: root.manager.current = 'training'
+        Button:
+            text: 'Back to menu'
+            on_press: root.manager.current = 'menu'
+
+<ComposeTrainingPlanScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 30
+        Button:
+            text: 'Simple programs'
+            on_press: root.manager.current = 'simple_program_selection'
+        Button:
+            text: 'Programs for specific goal (not implemented)'
+        Button:
+            text: 'Back to menu'
+            on_press: root.manager.current = 'menu'
+
+
+<SimpleProgramSelectionScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 30
+        Button:
+            id: beginners
+            text: 'Beginners'
+            on_press: root.goto_program_content( self )
+        Button:
+            text: '2 day split'
+            on_press: root.goto_program_content( self )
+        Button:
+            text: 'Create custom program (not implemented)'
+        Button
+            text: 'Back'
+            on_press: root.manager.current = 'compose_training_plan'
+
+
+<SimpleProgramContentScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 30
+        Label:
+            text: 'Days and Exercises:'
+        Label:
+            id: program_content
+        BoxLayout:
+            orientation: 'horizontal'
+            spacing: 30
+            size_hint: ( 1.0, 0.2 )
+            Button:
+                text: 'Set as current program'
+                on_press: root.set_and_go_to_menu
+            Button
+                text: 'Discard'
+                on_press: root.manager.current = 'simple_program_selection'
+
+
+<ViewProgressScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 30
+        Label:
+            text: 'Program progress (not implemented)'
+        Label:
+            text: 'Metrics (not implemented)'
+        Button:
+            text: 'Journal overview'
+            on_press: root.manager.current = 'journal_overview'
+        Button:
+            text: 'Back to menu'
+            on_press: root.manager.current = 'menu'
+
+<TrainingScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 10
+        Label:
+            text: 'List of exercises'
+            size_hint: (1.0, 0.1)
+        ScrollView:
+            size_hint_y: 0.7
+            GridLayout:
+                id: exercises_list
+                cols: 1
+                spacing: 30
+                row_default_height: 250
+                row_force_default: True
+                size_hint_y: None
+        Button:
+            text: 'Add exercise'
+            size_hint: (1.0, 0.10)
+            on_press: root.manager.current = 'select_exercise'      
+        BoxLayout:
+            orientation: 'horizontal'
+            spacing: 10
+            size_hint: (1.0, 0.10)
+            Button:
+                text: 'Discard'
+                on_press: root.discard_training_and_goto_start_exercising()
+            Button:
+                text: 'Save and go back'
+                on_press: root.save_training_and_goto_start_exercising()
+
+
+<SelectExerciseScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 30
+        Label:
+            text: 'Select an exercise:'
+            size_hint_y: 0.2
+        ScrollView:
+            size_hint_y: 0.6
+            GridLayout:
+                id: possible_exercises          
+                cols: 2
+                spacing: 5
+                row_default_height: 70
+                row_force_default: True
+                size_hint_y: None
+        Button:
+            text: 'Back'
+            size_hint_y: 0.2
+            on_press: root.manager.current = 'training'
+
+
+<ExerciseSetsRepsWeightsWidget>:
+    cols: 1
+    spacing: 1
+    BoxLayout:
+        size_hint_y: 0.2
+        orientation: 'horizontal'
+        spacing: 30
+        Label:
+            id: exercise_name_label
+            text: "Ex.Name"
+        Label:
+            text: "Reps"
+        Label:
+            text: "Weights"
+    BoxLayout:
+        id: sets_reps_weights
+        orientation: 'vertical'
+        spacing: 5
+    Button:
+        text: 'Add set'
+        size_hint: (0.66, 0.2)
+        on_press: root.add_set_with_reps_weights()
+    TextInput:
+        id: exercise_comment
+        hint_text: 'Comment Exercise'
+        size_hint_y: 0.2
+        on_text: root.current_training_screen.update_training_from_user_input()
+
+
+<JournalOverviewScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 30
+        ScrollView:
+            pos: (0, 0)
+            TreeView:
+                id: tree
+                root_options: dict( text = 'Tree One' )
+                hide_root: True
+                indent_level: 4
+                size_hint: ( 1, None )
+    Button:
+        text: 'Back'
+        size_hint_y: 0.2
+        on_press: root.manager.current = 'view_progress'

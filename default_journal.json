@@ -1,0 +1,110 @@
+{
+  "trainings": [
+    {
+      "exercises": [
+        {
+          "comment": "as", 
+          "name": "Push Ups", 
+          "reps": [
+            "1", 
+            "2", 
+            "3"
+          ], 
+          "weights": [
+            "3", 
+            "4", 
+            "5"
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "123", 
+          "name": "Deadlift", 
+          "reps": [
+            "3", 
+            "4", 
+            "5", 
+            "12"
+          ], 
+          "weights": [
+            "40", 
+            "30", 
+            "10", 
+            "3"
+          ], 
+          "sets": 4, 
+          "type": "ExerciseSetsRepsWeights"
+        }
+      ]
+    }, 
+    {
+      "exercises": [
+        {
+          "comment": "", 
+          "name": "Leg Press", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Hack Squat", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Barbell Bench Press", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "1", 
+          "name": "Pull Ups", 
+          "reps": [
+            "1", 
+            "2", 
+            "3"
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }
+      ]
+    }
+  ]
+}
