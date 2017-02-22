@@ -1,62 +1,58 @@
-class ExerciseDesription( object ):
-    def __init__( self, name, exercise_type ):
-        self.name = name
-        self.exercise_type = exercise_type
-        self.exercise_widget_type = self.exercise_type + 'Widget'
-
-list_of_exercises = []
-
-list_of_exercises.append(
-    ExerciseDesription( 'Push Ups', 'ExerciseSetsRepsWeights' ) )
-list_of_exercises.append(
-    ExerciseDesription( 'Leg Press', 'ExerciseSetsRepsWeights' ) )
-list_of_exercises.append(
-    ExerciseDesription( 'Hack Squat', 'ExerciseSetsRepsWeights' ) )
-list_of_exercises.append(
-    ExerciseDesription( 'Calf Raise', 'ExerciseSetsRepsWeights' ) )
-list_of_exercises.append(
-    ExerciseDesription( 'Deadlift', 'ExerciseSetsRepsWeights' ) )
-list_of_exercises.append(
-    ExerciseDesription( 'Romanian Deadlift', 'ExerciseSetsRepsWeights' ) )
-list_of_exercises.append(
-    ExerciseDesription( 'Barbell Squat', 'ExerciseSetsRepsWeights' ) )
-list_of_exercises.append(
-    ExerciseDesription( 'Lying Leg Curl', 'ExerciseSetsRepsWeights' ) )
-list_of_exercises.append(
-    ExerciseDesription( 'Leg Extension', 'ExerciseSetsRepsWeights' ) )
-list_of_exercises.append(
-    ExerciseDesription( 'Pull Ups', 'ExerciseSetsRepsWeights' ) )
-list_of_exercises.append(
-    ExerciseDesription( 'Lying T-Bar Row', 'ExerciseSetsRepsWeights' ) )
-list_of_exercises.append(
-    ExerciseDesription( 'T-Bar Row', 'ExerciseSetsRepsWeights' ) )
-list_of_exercises.append(
-    ExerciseDesription( 'Leverage Iso Row', 'ExerciseSetsRepsWeights' ) )
-list_of_exercises.append(
-    ExerciseDesription( 'Machine Bench Press', 'ExerciseSetsRepsWeights' ) )
-list_of_exercises.append(
-    ExerciseDesription( 'Barbell Bench Press', 'ExerciseSetsRepsWeights' ) )
-list_of_exercises.append(
-    ExerciseDesription( 'Leverage Shoulder Press', 'ExerciseSetsRepsWeights' ) )
-list_of_exercises.append(
-    ExerciseDesription( 'Standing Military Press', 'ExerciseSetsRepsWeights' ) )
-list_of_exercises.append(
-    ExerciseDesription( 'Upright Barbell Row', 'ExerciseSetsRepsWeights' ) )
-list_of_exercises.append(
-    ExerciseDesription( 'Triceps Pushdown', 'ExerciseSetsRepsWeights' ) )
-list_of_exercises.append(
-    ExerciseDesription( 'Dips', 'ExerciseSetsRepsWeights' ) )
-list_of_exercises.append(
-    ExerciseDesription( 'Machine Biceps Curl', 'ExerciseSetsRepsWeights' ) )
-list_of_exercises.append(
-    ExerciseDesription( 'Barbell Curl', 'ExerciseSetsRepsWeights' ) )
-list_of_exercises.append(
-    ExerciseDesription( 'Hammer Curl', 'ExerciseSetsRepsWeights' ) )
-list_of_exercises.append(
-    ExerciseDesription( 'Hyperextenstion', 'ExerciseSetsRepsWeights' ) )
-list_of_exercises.append(
-    ExerciseDesription( 'Decline Crunch', 'ExerciseSetsRepsWeights' ) )
-list_of_exercises.append(
-    ExerciseDesription( 'Hanging Leg Raise', 'ExerciseSetsRepsWeights' ) )
-list_of_exercises.append(
-    ExerciseDesription( 'Distance Running', 'ExerciseSetsRepsWeights' ) )
+list_of_exercises = [
+    { 'name': 'Push Ups',
+      'exercise_type': 'ExerciseSetsRepsWeights' },
+    { 'name': 'Leg Press',
+      'exercise_type': 'ExerciseSetsRepsWeights' },
+    { 'name': 'Hack Squat',
+      'exercise_type': 'ExerciseSetsRepsWeights' }, 
+    { 'name': 'Calf Raise',
+      'exercise_type': 'ExerciseSetsRepsWeights' },
+    { 'name': 'Deadlift',
+      'exercise_type': 'ExerciseSetsRepsWeights' },
+    { 'name': 'Romanian Deadlift',
+      'exercise_type': 'ExerciseSetsRepsWeights' },
+    { 'name': 'Barbell Squat',
+      'exercise_type': 'ExerciseSetsRepsWeights' },
+    { 'name': 'Lying Leg Curl',
+      'exercise_type': 'ExerciseSetsRepsWeights' },
+    { 'name': 'Leg Extension',
+      'exercise_type': 'ExerciseSetsRepsWeights' },
+    { 'name': 'Pull Ups',
+      'exercise_type': 'ExerciseSetsRepsWeights' },
+    { 'name': 'Lying T-Bar Row',
+      'exercise_type': 'ExerciseSetsRepsWeights' },
+    { 'name': 'T-Bar Row',
+      'exercise_type': 'ExerciseSetsRepsWeights' },
+    { 'name': 'Leverage Iso Row',
+      'exercise_type': 'ExerciseSetsRepsWeights' },
+    { 'name': 'Lat Pulldown',
+      'exercise_type': 'ExerciseSetsRepsWeights' },    
+    { 'name': 'Machine Bench Press',
+      'exercise_type': 'ExerciseSetsRepsWeights' },
+    { 'name': 'Barbell Bench Press',
+      'exercise_type': 'ExerciseSetsRepsWeights' },
+    { 'name': 'Leverage Shoulder Press',
+      'exercise_type': 'ExerciseSetsRepsWeights' },
+    { 'name': 'Standing Military Press',
+      'exercise_type': 'ExerciseSetsRepsWeights' },
+    { 'name': 'Upright Barbell Row',
+      'exercise_type': 'ExerciseSetsRepsWeights' },
+    { 'name': 'Triceps Pushdown',
+      'exercise_type': 'ExerciseSetsRepsWeights' },
+    { 'name': 'Dips',
+      'exercise_type': 'ExerciseSetsRepsWeights' },
+    { 'name': 'Machine Biceps Curl',
+      'exercise_type': 'ExerciseSetsRepsWeights' },
+    { 'name': 'Barbell Curl',
+      'exercise_type': 'ExerciseSetsRepsWeights' },
+    { 'name': 'Hammer Curl',
+      'exercise_type': 'ExerciseSetsRepsWeights' },
+    { 'name': 'Hyperextenstion',
+      'exercise_type': 'ExerciseSetsRepsWeights' },
+    { 'name': 'Decline Crunch',
+      'exercise_type': 'ExerciseSetsRepsWeights' },
+    { 'name': 'Hanging Leg Raise',
+      'exercise_type': 'ExerciseSetsRepsWeights' },
+    { 'name': 'Distance Running',
+      'exercise_type': 'ExerciseSetsRepsWeights' }
+]
