@@ -4,7 +4,7 @@ from Journal import *
 import random
 
 class SimpleProgram( object ):
-    """Simple program doesn't have aim."""
+    """Simple program doesn't have a specific goal."""
 
     def __init__( self, name, trainings ):
         self.program_type = 'simple_program'
@@ -26,23 +26,3 @@ class SimpleProgram( object ):
     def __str__( self ):
         return "Simple program: " + str( self.name) + "\n" + \
             "\t" + str( self.trainings ) + "\n"
-
-    
-
-novice_simple_program = SimpleProgram(
-    'novice',
-    [ Training( ExerciseSetsRepsWeights( 'Pull Ups',
-                                         sets = 3, reps = 5, weights = 16 ),
-                ExerciseSetsRepsWeights( 'Push Ups',
-                                         sets = 3, reps = 25, weights = 0 ) ) ] )
-
-twoday_simple_program = SimpleProgram(
-    'two-day-split',
-    [ Training( ExerciseSetsRepsWeights( 'Leg Press',
-                                         sets = 3, reps = 5, weights = 25 ),
-                ExerciseSetsRepsWeights( 'Hack Squat',
-                                         sets = 3, reps = 10, weights = 10 ) ),
-      Training( ExerciseSetsRepsWeights( 'Barbell Bench Press',
-                                         sets = 3, reps = 5, weights = 16 ),
-                ExerciseSetsRepsWeights( 'Pull Ups',
-                                         sets = 3, reps = 25, weights = 0 ) ) ] )
