@@ -32,7 +32,10 @@ list_of_simple_programs['two_day_split'] = SimpleProgram(
 
 list_of_simple_programs['current_two_day_split'] = SimpleProgram(
     'Current Two-day split',
-    [ Training( ExerciseSetsRepsWeights( 'Pull Ups',
+    [ Training( ExerciseRunning( 'Warm-up Running',
+                                 intervals = 1,
+                                 distances = 1.0, times = '4:00' ),
+                ExerciseSetsRepsWeights( 'Pull Ups',
                                          sets = 3, reps = 8, weights = 0 ),
                 ExerciseSetsRepsWeights( 'Dips',
                                          sets = 3, reps = 8, weights = 0 ),
@@ -47,7 +50,10 @@ list_of_simple_programs['current_two_day_split'] = SimpleProgram(
                 ExerciseSetsRepsWeights( 'Hammer Curl',
                                          sets = 3, reps = 8, weights = 50 ),
             ),
-      Training( ExerciseSetsRepsWeights( 'Leg Press',
+      Training( ExerciseRunning( 'Warm-up Running',
+                                 intervals = 1,
+                                 distances = 1.0, times = '4:00' ),
+                ExerciseSetsRepsWeights( 'Leg Press',
                                          sets = 3, reps = 5, weights = 16 ),
                 ExerciseSetsRepsWeights( 'Hack Squat',
                                          sets = 3, reps = 25, weights = 0 ),

@@ -1,4 +1,6 @@
 list_of_exercises = [
+    { 'name': 'Distance Running',
+      'exercise_type': 'ExerciseRunning' },
     { 'name': 'Push Ups',
       'exercise_type': 'ExerciseSetsRepsWeights' },
     { 'name': 'Leg Press',
@@ -52,7 +54,5 @@ list_of_exercises = [
     { 'name': 'Decline Crunch',
       'exercise_type': 'ExerciseSetsRepsWeights' },
     { 'name': 'Hanging Leg Raise',
-      'exercise_type': 'ExerciseSetsRepsWeights' },
-    { 'name': 'Distance Running',
       'exercise_type': 'ExerciseSetsRepsWeights' }
 ]

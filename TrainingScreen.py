@@ -9,6 +9,7 @@ from kivy.uix.button import Button
 from kivy.uix.label import Label
 
 from ExerciseSetsRepsWeightsWidget import *
+from ExerciseRunningWidget import *
 
 from Training import *
 
@@ -17,11 +18,11 @@ class TrainingScreen( Screen ):
         super( TrainingScreen, self ).__init__( **kwargs )
         self.excercise_widgets = []
         self.training = Training()
-        v_layout = BoxLayout( orientation = 'vertical',
+        self.main_layout = BoxLayout( orientation = 'vertical',
                               spacing = 5 )
         label = Label( text = 'List of exercises',
                        size_hint = (1.0, 0.3) )
-        v_layout.add_widget( label )
+        self.main_layout.add_widget( label )
         self.exercises_layout = GridLayout(
             cols = 1,
             spacing = 5,
@@ -30,33 +31,37 @@ class TrainingScreen( Screen ):
                                     self.exercises_layout.setter('height') )
         self.scroll_for_exercises = ScrollView()                
         self.scroll_for_exercises.add_widget( self.exercises_layout )
-        v_layout.add_widget( self.scroll_for_exercises )
+        self.main_layout.add_widget( self.scroll_for_exercises )
+        self.main_layout.add_widget( Label(size_hint_y = 0.1) )
         add_exc_button = Button( text = 'Add exercise', size_hint_y = 0.2 )
         add_exc_button.on_press = self.goto_select_exercise
-        v_layout.add_widget( add_exc_button )
+        self.main_layout.add_widget( add_exc_button )
         self.training_comment = TextInput( hint_text = 'Comment Training',
                                            size_hint_y = 0.1 )
         self.training_comment.bind( text = self.update_training_from_user_input )
-        v_layout.add_widget( self.training_comment )
+        self.main_layout.add_widget( self.training_comment )
         back_layout = BoxLayout( orientation = 'horizontal',
                                  spacing = 30,
                                  size_hint = ( 1.0, 0.2 ) )
-        discard_button = Button(
-            text = 'Discard' )
+        discard_button = Button( text = 'Discard' )
         discard_button.on_press = self.goto_start_exercising
-        save_and_exit_button = Button(
-            text = 'Save and go back' )
+        save_and_exit_button = Button( text = 'Save and go back' )
         save_and_exit_button.on_press = self.save_training_and_goto_start_exercising
         back_layout.add_widget( discard_button )
         back_layout.add_widget( save_and_exit_button )
-        v_layout.add_widget( back_layout )
-        self.add_widget( v_layout )
-        self.following_plan = False        
+        self.main_layout.add_widget( back_layout )
+        self.add_widget( self.main_layout )
+        self.following_plan = False
+        self.changer_layout = None
+        self.back_from_exc_selection = False
 
     def add_exercise( self, exercise_name, exercise_widget_type ):
         if exercise_widget_type == 'ExerciseSetsRepsWeightsWidget': 
             self.exercises_layout.add_widget(
                 ExerciseSetsRepsWeightsWidget( self, text = exercise_name ) )
+        elif exercise_widget_type == 'ExerciseRunningWidget': 
+            self.exercises_layout.add_widget(
+                ExerciseRunningWidget( self, text = exercise_name ) )
         else:
             print( 'Unknown excercise type:', exercise_widget_type )
         
@@ -76,6 +81,10 @@ class TrainingScreen( Screen ):
         self.exercises_layout.clear_widgets()
         self.training_comment.text = ''
         self.parent.current = 'start_exercising'
+        if self.following_plan:
+            self.following_plan = False
+            self.main_layout.remove_widget( self.changer_layout )
+            self.changer_layout = None
 
     def save_training_and_goto_start_exercising( self ):
         self.add_time_information_to_training()
@@ -88,11 +97,16 @@ class TrainingScreen( Screen ):
         self.training = Training()
         self.exercises_layout.clear_widgets()
         self.training_comment.text = ''
+        if self.following_plan:
+            self.following_plan = False
+            self.main_layout.remove_widget( self.changer_layout )
+            self.changer_layout = None
         self.parent.current = 'start_exercising'
 
     def on_pre_enter( self ):
         self.last_training_index = App.get_running_app().simple_program_last_training
-        if self.following_plan:
+        if self.following_plan and not self.back_from_exc_selection:
+            self.add_training_changer()
             current_program = App.get_running_app().simple_program
             self.last_training_index = \
                 ( self.last_training_index + 1 ) % len( current_program.trainings )
@@ -100,10 +114,49 @@ class TrainingScreen( Screen ):
             for ex in training.exercises:
                 self.add_exercise( ex.description['name'],
                                    ex.description['type'] + 'Widget' )
-        
+        self.back_from_exc_selection = False
+                
     def on_enter( self ):
         self.start_time = datetime.now()
 
+    def add_training_changer( self ):
+        if not self.changer_layout:
+            self.changer_layout = BoxLayout( orientation = 'horizontal',
+                                             spacing = 5,
+                                             size_hint_y = 0.05 )
+            label = Label( text = 'Select another training from the program:' )
+            prev_btn = Button( text = 'Prev', size_hint_x = 0.2 )
+            prev_btn.on_press = self.select_prev_training
+            next_btn = Button( text = 'Next', size_hint_x = 0.2 )
+            next_btn.on_press = self.select_next_training
+            self.changer_layout.add_widget( label )
+            self.changer_layout.add_widget( prev_btn )
+            self.changer_layout.add_widget( next_btn )
+            self.main_layout.add_widget( self.changer_layout,
+                                         len( self.main_layout.children ) )
+
+    def select_prev_training( self ):
+        self.exercises_layout.clear_widgets()
+        current_program = App.get_running_app().simple_program
+        self.last_training_index = \
+            ( self.last_training_index - 1 ) % len( current_program.trainings )
+        training = current_program.trainings[ self.last_training_index ]
+        for ex in training.exercises:
+            self.add_exercise( ex.description['name'],
+                               ex.description['type'] + 'Widget' )
+        
+
+    def select_next_training( self ):
+        self.exercises_layout.clear_widgets()
+        current_program = App.get_running_app().simple_program
+        self.last_training_index = \
+            ( self.last_training_index + 1 ) % len( current_program.trainings )
+        training = current_program.trainings[ self.last_training_index ]
+        for ex in training.exercises:
+            self.add_exercise( ex.description['name'],
+                               ex.description['type'] + 'Widget' )
+
+        
     def add_time_information_to_training( self ):
         training_date = self.start_time.strftime('%d-%m-%Y')
         self.end_time = datetime.now()

@@ -40,6 +40,7 @@ class SelectExerciseScreen( Screen ):
         exercise_widget_type = button.exercise_widget_type 
         self.parent.get_screen('training').add_exercise( exercise_name,
                                                          exercise_widget_type )
+        self.parent.get_screen('training').back_from_exc_selection = True
         self.parent.current = 'training'
         
     def goto_training( self ):

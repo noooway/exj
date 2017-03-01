@@ -386,6 +386,606 @@
       "duration": "0:00:04.009047", 
       "start_time": "2017-02-21 12:36:10.269882", 
       "training_index_in_program": 0
+    }, 
+    {
+      "comment": "", 
+      "date": "28-02-2017", 
+      "exercises": [
+        {
+          "comment": "", 
+          "name": "Leg Press", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Hack Squat", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Calf Raise", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Hyperextenstion", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Romanian Deadlift", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Deadlift", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Decline Crunch", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Hanging Leg Raise", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }
+      ], 
+      "end_time": "2017-02-28 12:25:36.700817", 
+      "training_program": "Current Two-day split", 
+      "duration": "0:00:38.307224", 
+      "start_time": "2017-02-28 12:24:58.393593", 
+      "training_index_in_program": 1
+    }, 
+    {
+      "comment": "", 
+      "date": "28-02-2017", 
+      "exercises": [
+        {
+          "comment": "", 
+          "name": "Leg Press", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Hack Squat", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Calf Raise", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Hyperextenstion", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Romanian Deadlift", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Deadlift", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Decline Crunch", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Hanging Leg Raise", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }
+      ], 
+      "end_time": "2017-02-28 13:08:56.251405", 
+      "training_program": "Current Two-day split", 
+      "duration": "0:00:03.296205", 
+      "start_time": "2017-02-28 13:08:52.955200", 
+      "training_index_in_program": 1
+    }, 
+    {
+      "comment": "", 
+      "date": "28-02-2017", 
+      "exercises": [
+        {
+          "comment": "", 
+          "name": "Pull Ups", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Dips", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Leverage Iso Row", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Barbell Bench Press", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "T-Bar Row", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Triceps Pushdown", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Hammer Curl", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }
+      ], 
+      "end_time": "2017-02-28 13:09:00.041008", 
+      "training_program": "Current Two-day split", 
+      "duration": "0:00:02.120078", 
+      "start_time": "2017-02-28 13:08:57.920930", 
+      "training_index_in_program": 0
+    }, 
+    {
+      "comment": "", 
+      "date": "01-03-2017", 
+      "exercises": [
+        {
+          "comment": "test", 
+          "distances": [
+            "1"
+          ], 
+          "name": "Distance Running", 
+          "times": [
+            "3:50"
+          ], 
+          "intervals": 1, 
+          "type": "ExerciseRunning"
+        }
+      ], 
+      "end_time": "2017-03-01 09:23:00.645938", 
+      "training_program": null, 
+      "duration": "0:00:17.876861", 
+      "start_time": "2017-03-01 09:22:42.769077", 
+      "training_index_in_program": null
+    }, 
+    {
+      "comment": "", 
+      "date": "01-03-2017", 
+      "exercises": [
+        {
+          "comment": "asz", 
+          "distances": [
+            "1"
+          ], 
+          "name": "Distance Running", 
+          "times": [
+            "2"
+          ], 
+          "intervals": 1, 
+          "type": "ExerciseRunning"
+        }
+      ], 
+      "end_time": "2017-03-01 09:27:26.522060", 
+      "training_program": null, 
+      "duration": "0:00:04.844090", 
+      "start_time": "2017-03-01 09:27:21.677970", 
+      "training_index_in_program": null
+    }, 
+    {
+      "comment": "", 
+      "date": "01-03-2017", 
+      "exercises": [
+        {
+          "comment": "", 
+          "distances": [
+            ""
+          ], 
+          "name": "Warm-up Running", 
+          "times": [
+            ""
+          ], 
+          "intervals": 1, 
+          "type": "ExerciseRunning"
+        }, 
+        {
+          "comment": "", 
+          "name": "Leg Press", 
+          "reps": [
+            "", 
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 4, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Hack Squat", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Calf Raise", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Hyperextenstion", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Romanian Deadlift", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Deadlift", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Decline Crunch", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Hanging Leg Raise", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }
+      ], 
+      "end_time": "2017-03-01 10:05:11.734214", 
+      "training_program": "Current Two-day split", 
+      "duration": "0:00:26.756109", 
+      "start_time": "2017-03-01 10:04:44.978105", 
+      "training_index_in_program": 1
     }
   ]
 }
