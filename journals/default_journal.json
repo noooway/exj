@@ -986,6 +986,243 @@
       "duration": "0:00:26.756109", 
       "start_time": "2017-03-01 10:04:44.978105", 
       "training_index_in_program": 1
+    }, 
+    {
+      "comment": "", 
+      "date": "01-03-2017", 
+      "exercises": [
+        {
+          "comment": "", 
+          "distances": [
+            ""
+          ], 
+          "name": "Warm-up Running", 
+          "times": [
+            ""
+          ], 
+          "intervals": 1, 
+          "type": "ExerciseRunning"
+        }, 
+        {
+          "comment": "", 
+          "name": "Pull Ups", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Dips", 
+          "reps": [
+            "", 
+            "3", 
+            "2", 
+            "1"
+          ], 
+          "weights": [
+            "", 
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 4, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Leverage Iso Row", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Barbell Bench Press", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "T-Bar Row", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Triceps Pushdown", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "name": "Hammer Curl", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }
+      ], 
+      "end_time": "2017-03-01 12:06:00.849997", 
+      "training_program": "Current Two-day split", 
+      "duration": "0:00:04.568279", 
+      "start_time": "2017-03-01 12:05:56.281718", 
+      "training_index_in_program": 0
+    }, 
+    {
+      "comment": "", 
+      "date": "01-03-2017", 
+      "exercises": [
+        {
+          "comment": "test", 
+          "type": "MetricWeight", 
+          "name": "Weight", 
+          "weight": "80"
+        }, 
+        {
+          "comment": "", 
+          "name": "Triceps Pushdown", 
+          "reps": [
+            "1", 
+            "2", 
+            "3"
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }
+      ], 
+      "end_time": "2017-03-01 12:08:49.471187", 
+      "training_program": null, 
+      "duration": "0:00:02.017214", 
+      "start_time": "2017-03-01 12:08:47.453973", 
+      "training_index_in_program": null
+    }, 
+    {
+      "comment": "", 
+      "date": "02-03-2017", 
+      "exercises": [
+        {
+          "comment": "", 
+          "type": "MetricWeight", 
+          "name": "Weight", 
+          "weight": "80"
+        }
+      ], 
+      "end_time": "2017-03-02 07:42:13.466621", 
+      "training_program": null, 
+      "duration": "0:00:08.107373", 
+      "start_time": "2017-03-02 07:42:05.359248", 
+      "training_index_in_program": null
+    }, 
+    {
+      "comment": "", 
+      "date": "02-03-2017", 
+      "exercises": [
+        {
+          "comment": "", 
+          "name": "Calf Raise", 
+          "reps": [
+            "", 
+            "", 
+            ""
+          ], 
+          "weights": [
+            "", 
+            "", 
+            ""
+          ], 
+          "sets": 3, 
+          "type": "ExerciseSetsRepsWeights"
+        }, 
+        {
+          "comment": "", 
+          "type": "MetricWeight", 
+          "name": "Weight", 
+          "weight": ""
+        }
+      ], 
+      "end_time": "2017-03-02 08:39:11.917026", 
+      "training_program": null, 
+      "duration": "0:00:03.415868", 
+      "start_time": "2017-03-02 08:39:08.501158", 
+      "training_index_in_program": null
+    }, 
+    {
+      "comment": "", 
+      "date": "02-03-2017", 
+      "exercises": [
+        {
+          "comment": "", 
+          "type": "MetricWeight", 
+          "name": "Measure Weight", 
+          "weight": "80"
+        }
+      ], 
+      "end_time": "2017-03-02 09:00:04.812119", 
+      "training_program": null, 
+      "duration": "0:00:18.747424", 
+      "start_time": "2017-03-02 08:59:46.064695", 
+      "training_index_in_program": null
     }
   ]
 }

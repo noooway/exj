@@ -81,9 +81,11 @@ class JournalOverviewScreen( Screen ):
             self.tree_view.add_node(
                 TreeViewLabel( text = label_str ), training_node )
             for exercise in training.exercises:
+                title_node_text = 'Exercise: ' + exercise.description['name']
+                if 'Metric' in exercise.description.get( 'type' ):
+                    title_node_text = 'Metric: ' + exercise.description['name']
                 exc_node = self.tree_view.add_node(
-                    TreeViewLabel(text='Exercise: ' + exercise.description['name']),
-                    training_node )
+                    TreeViewLabel( text = title_node_text ), training_node )
                 for essential_field in exercise.essential_fields:
                     label_str = essential_field + \
                                 ': ' + str( exercise.description[essential_field] )

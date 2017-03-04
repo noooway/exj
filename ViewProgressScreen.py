@@ -11,8 +11,6 @@ class ViewProgressScreen( Screen ):
                               spacing = 30 )
         progress_label = Label( text = 'Program progress (not implemented)' )
         v_layout.add_widget( progress_label )
-        metrics_label = Label( text = 'Metrics (not implemented)' )
-        v_layout.add_widget( metrics_label )
         journal_overview_button = Button( text = 'Journal overview' )
         journal_overview_button.on_press = self.goto_journal_overview
         v_layout.add_widget( journal_overview_button )        

@@ -1,6 +1,7 @@
 from SimpleProgram import *
 from Training import *
 from Exercise import *
+from Metric import *
 
 list_of_simple_programs = {}
 list_of_simple_programs['novice'] = SimpleProgram(

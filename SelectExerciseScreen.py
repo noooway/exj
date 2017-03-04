@@ -15,7 +15,7 @@ class SelectExerciseScreen( Screen ):
                               spacing = 30 )
         label = Label( text = 'Select an exercise:', size_hint_y = 0.2 )
         v_layout.add_widget( label )
-        exc_grid = GridLayout( cols = 2,
+        exc_grid = GridLayout( cols = 3,
                                spacing = 5,
                                row_default_height = 70,
                                row_force_default = True,

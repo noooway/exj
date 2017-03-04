@@ -1,4 +1,5 @@
 from Exercise import *
+from Metric import *
 
 class Training( object ):
     """Single training consists of a number of exercises and

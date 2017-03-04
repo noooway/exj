@@ -54,5 +54,7 @@ list_of_exercises = [
     { 'name': 'Decline Crunch',
       'exercise_type': 'ExerciseSetsRepsWeights' },
     { 'name': 'Hanging Leg Raise',
-      'exercise_type': 'ExerciseSetsRepsWeights' }
+      'exercise_type': 'ExerciseSetsRepsWeights' },
+    { 'name': 'Measure Weight',
+      'exercise_type': 'MetricWeight' }
 ]

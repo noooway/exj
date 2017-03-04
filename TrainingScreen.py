@@ -10,6 +10,7 @@ from kivy.uix.label import Label
 
 from ExerciseSetsRepsWeightsWidget import *
 from ExerciseRunningWidget import *
+from MetricWeightWidget import *
 
 from Training import *
 
@@ -62,6 +63,9 @@ class TrainingScreen( Screen ):
         elif exercise_widget_type == 'ExerciseRunningWidget': 
             self.exercises_layout.add_widget(
                 ExerciseRunningWidget( self, text = exercise_name ) )
+        elif exercise_widget_type == 'MetricWeightWidget': 
+            self.exercises_layout.add_widget(
+                MetricWeightWidget( self, text = exercise_name ) )
         else:
             print( 'Unknown excercise type:', exercise_widget_type )
         

@@ -14,8 +14,6 @@ from SelectExerciseScreen import *
 from JournalOverviewScreen import *
 
 from Journal import *
-from Exercise import *
-from SimpleProgram import *
 
 from list_of_simple_programs import list_of_simple_programs
 import config

@@ -1,6 +1,3 @@
-from Training import *
-from Exercise import *
-from Journal import *
 import random
 
 class SimpleProgram( object ):
