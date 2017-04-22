@@ -1,4 +1,5 @@
 import os.path
+import configparser
 
 from kivy.app import App
 from kivy.lang import Builder
@@ -16,15 +17,17 @@ from JournalOverviewScreen import *
 from Journal import *
 
 from list_of_simple_programs import list_of_simple_programs
-import config
 
 # The App 
 class ExjApp(App):
-    def __init__(self):
+    def __init__( self ):
         App.__init__( self )
-        self.journal_file = config.journal_file
-        self.simple_program_key_in_list = config.simple_program_key_in_list
-        self.simple_program_last_training = config.simple_program_last_training
+        config = configparser.ConfigParser()
+        config.read('config.ini')
+        self.journal_file = config.get( 'Journal', 'journal_file' )
+        self.simple_program_key_in_list = config.get('Training program', 'simple_program_key_in_list' )
+        self.simple_program_last_training = config.getint(
+            'Training program', 'simple_program_last_training' )
         if os.path.isfile( self.journal_file ):            
             self.journal = Journal.load_journal( self.journal_file )
         else:
@@ -32,7 +35,7 @@ class ExjApp(App):
         self.simple_program = list_of_simple_programs.get(
             self.simple_program_key_in_list )        
 
-    def build(self):
+    def build( self ):
         sm = ScreenManager()
         sm.add_widget( MenuScreen( name='menu' ) )
         sm.add_widget( StartExercisingScreen( name='start_exercising') )
@@ -45,13 +48,20 @@ class ExjApp(App):
         return sm
 
     def write_config( self ):
-        with open( 'config.py', 'w' ) as outfile:
-            outfile.write( 'journal_file = "{0}"\n'.format( self.journal_file ) )
-            outfile.write( 'simple_program_key_in_list = "{0}"\n'.format(
-                self.simple_program_key_in_list ) )
-            outfile.write( 'simple_program_last_training = {0}\n'.format(
-                self.simple_program_last_training ) )
-            
+        config = configparser.ConfigParser()
+        config.add_section( 'Journal' )
+        config.set('Journal', 'journal_file', str(self.journal_file) )
+        config.add_section( 'Training program' )
+        config.set('Training program', 'simple_program_key_in_list',
+                   str(self.simple_program_key_in_list) )
+        config.set('Training program', 'simple_program_last_training',
+                   str(self.simple_program_last_training) )
+        with open('config.ini', 'w') as configfile:
+            config.write( configfile )
+
+    @staticmethod
+    def strip_quotes( quoted_string ):
+        return( quoted_string[1:-1] )
 
 if __name__ == '__main__':
     exj = ExjApp()
