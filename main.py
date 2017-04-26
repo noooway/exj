@@ -1,5 +1,5 @@
 import os.path
-import configparser
+import ConfigParser
 
 from kivy.app import App
 from kivy.lang import Builder
@@ -22,7 +22,7 @@ from list_of_simple_programs import list_of_simple_programs
 class ExjApp(App):
     def __init__( self ):
         App.__init__( self )
-        config = configparser.ConfigParser()
+        config = ConfigParser.ConfigParser()
         config.read('config.ini')
         self.journal_file = config.get( 'Journal', 'journal_file' )
         self.simple_program_key_in_list = config.get('Training program', 'simple_program_key_in_list' )
