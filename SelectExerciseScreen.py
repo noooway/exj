@@ -59,6 +59,5 @@ class SelectExerciseScreen( Screen ):
                     with open( fullpath, 'rt' ) as infile:
                         dict_from_json = json.load( infile )
                         list_of_exercises.extend( dict_from_json )
-        print( list_of_exercises )
         return( list_of_exercises )
 

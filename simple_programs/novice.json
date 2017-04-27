@@ -1,0 +1,41 @@
+{
+  "name": "Novice",
+  "trainings": [
+    {
+      "exercises": [
+        {
+          "weights": 16,
+          "reps": 5,
+          "sets": 3,
+          "name": "Pull Ups",
+          "type": "ExerciseSetsRepsWeights"
+        },
+        {
+          "weights": 0,
+          "reps": 25,
+          "sets": 3,
+          "name": "Dips",
+          "type": "ExerciseSetsRepsWeights"
+        }
+      ]
+    },
+    {
+      "exercises": [
+        {
+          "weights": 16,
+          "reps": 5,
+          "sets": 3,
+          "name": "Squat",
+          "type": "ExerciseSetsRepsWeights"
+        },
+        {
+          "weights": 0,
+          "reps": 25,
+          "sets": 3,
+          "name": "Hyperextenstion",
+          "type": "ExerciseSetsRepsWeights"
+        }
+      ]
+    }
+  ]
+}

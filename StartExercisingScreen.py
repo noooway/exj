@@ -8,7 +8,8 @@ class StartExercisingScreen( Screen ):
         super( StartExercisingScreen, self ).__init__( **kwargs )
         v_layout = BoxLayout( orientation = 'vertical',
                               spacing = 30 )
-        self.follow_plan_button = Button( text = 'Follow the plan', halign='center' )
+        self.follow_plan_button = Button( text = 'Follow the plan',
+                                          halign='center' )
         self.follow_plan_button.on_press = self.generate_and_goto_training
         v_layout.add_widget( self.follow_plan_button )
         unplanned_training_button = Button( text = 'Unplanned training' )
@@ -40,6 +41,7 @@ class StartExercisingScreen( Screen ):
     def on_pre_enter( self ):
         current_program_name = None
         if App.get_running_app().simple_program:
-            current_program_name = App.get_running_app().simple_program.name
+            current_program_name = \
+                App.get_running_app().simple_program.get_name()
         self.follow_plan_button.text = 'Follow the plan.\n' + \
                 '(Current program: {0})'.format( current_program_name )

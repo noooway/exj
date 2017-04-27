@@ -1,0 +1,55 @@
+{
+  "name": "Test two-day split",
+  "trainings": [
+    {
+      "exercises": [
+        {
+          "weights": 16,
+          "reps": 5,
+          "sets": 3,
+          "name": "Barbell Bench Press",
+          "type": "ExerciseSetsRepsWeights"
+        },
+        {
+          "weights": 0,
+          "reps": 25,
+          "sets": 3,
+          "name": "Standing Military Press",
+          "type": "ExerciseSetsRepsWeights"
+        },
+        {
+          "weights": 0,
+          "reps": 25,
+          "sets": 3,
+          "name": "Push Ups",
+          "type": "ExerciseSetsRepsWeights"
+        }
+      ]
+    },
+    {
+      "exercises": [
+        {
+          "weights": 16,
+          "reps": 5,
+          "sets": 3,
+          "name": "Leg Press",
+          "type": "ExerciseSetsRepsWeights"
+        },
+        {
+          "weights": 0,
+          "reps": 25,
+          "sets": 3,
+          "name": "Hack Squat",
+          "type": "ExerciseSetsRepsWeights"
+        },
+        {
+          "weights": 0,
+          "reps": 25,
+          "sets": 3,
+          "name": "Deadlift",
+          "type": "ExerciseSetsRepsWeights"
+        }
+      ]
+    }
+  ]
+}
