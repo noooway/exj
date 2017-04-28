@@ -6,7 +6,8 @@ from kivy.uix.scrollview import ScrollView
 from kivy.uix.button import Button
 from kivy.uix.label import Label
 
-from list_of_simple_programs import list_of_simple_programs
+import os
+from SimpleProgram import *
 
 class SimpleProgramsScreen( Screen ):
     def __init__( self, **kwargs ):
@@ -18,9 +19,12 @@ class SimpleProgramsScreen( Screen ):
         programs_grid = GridLayout( cols = 1,
                                     spacing = 5,
                                     size_hint_y = None )
-        for k, v in list_of_simple_programs.items():
+        dict_of_simple_programs = \
+            App.get_running_app().dict_of_simple_programs
+        for k, v in dict_of_simple_programs.items():
             self.add_simple_program_widget( programs_grid, v )
-        programs_grid.bind( minimum_height = programs_grid.setter('height') )
+        programs_grid.bind( minimum_height =
+                            programs_grid.setter('height') )
         scroll_for_programs = ScrollView( size_hint_y = 0.6 )
         scroll_for_programs.add_widget( programs_grid )
         v_layout.add_widget( scroll_for_programs )                
@@ -38,8 +42,10 @@ class SimpleProgramsScreen( Screen ):
         program_layout = GridLayout( cols = 1,
                                      row_default_height = 70,
                                      size_hint_y = None )
-        program_layout.bind( minimum_height = program_layout.setter('height') )
-        btn = Button( text = simple_program.name,
+        program_layout.bind(
+            minimum_height = program_layout.setter('height') )
+        #print( simple_program )
+        btn = Button( text = simple_program.description["name"],
                       on_press = self.select_program_and_goto_main_screen )
         btn.simple_program = simple_program
         program_layout.add_widget( btn )
@@ -47,7 +53,8 @@ class SimpleProgramsScreen( Screen ):
                                          row_default_height = 20,
                                          row_force_default = True,
                                          size_hint_y = None )
-        description_layout.bind( minimum_height = description_layout.setter('height') )
+        description_layout.bind(
+            minimum_height = description_layout.setter('height') )
         for i, tr in enumerate( simple_program.trainings ):
             training_label = Label( text = "Training {0}:".format( i+1 ) )
             description_layout.add_widget( training_label )
@@ -63,11 +70,11 @@ class SimpleProgramsScreen( Screen ):
     def select_program_and_goto_main_screen( self, btn ):
         app = App.get_running_app()
         selected_program = btn.simple_program
-        for k, v in list_of_simple_programs.items():
+        for k, v in app.dict_of_simple_programs.items():
             if v == selected_program:
-                selected_program_key_in_list = k
+                selected_program_name = k
         app.simple_program = selected_program
-        app.simple_program_key_in_list = selected_program_key_in_list
+        app.simple_program_name = selected_program_name
         app.simple_program_last_training = -1
         app.write_config()
         self.parent.current = 'menu'

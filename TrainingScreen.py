@@ -28,13 +28,14 @@ class TrainingScreen( Screen ):
             cols = 1,
             spacing = 5,
             size_hint_y = None )
-        self.exercises_layout.bind( minimum_height =
-                                    self.exercises_layout.setter('height') )
+        self.exercises_layout.bind(
+            minimum_height = self.exercises_layout.setter('height') )
         self.scroll_for_exercises = ScrollView()                
         self.scroll_for_exercises.add_widget( self.exercises_layout )
         self.main_layout.add_widget( self.scroll_for_exercises )
         self.main_layout.add_widget( Label(size_hint_y = 0.1) )
-        add_exc_button = Button( text = 'Add exercise', size_hint_y = 0.2 )
+        add_exc_button = Button( text = 'Add exercise',
+                                 size_hint_y = 0.2 )
         add_exc_button.on_press = self.goto_select_exercise
         self.main_layout.add_widget( add_exc_button )
         self.training_comment = TextInput( hint_text = 'Comment Training',
@@ -173,14 +174,14 @@ class TrainingScreen( Screen ):
 
     def add_info_on_used_program( self ):
         if self.following_plan:
-            used_training_program_name = App.get_running_app().simple_program.name
+            used_training_program_name = App.get_running_app().simple_program.get_name()
             training_index_in_program = self.last_training_index
         else:
             used_training_program_name = None
             training_index_in_program = None
         self.training.add_description(
             training_program = used_training_program_name,
-            training_index_in_program = training_index_in_program )        
+            training_index_in_program = training_index_in_program )
         
 
     def remove_exercise( self, exercise_widget ):
