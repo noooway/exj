@@ -64,7 +64,7 @@ class ExjApp(App):
 
     def read_simple_programs( self ):
         dict_of_simple_programs = {}
-        simple_programs_folder = "simple_programs"
+        simple_programs_folder = "simple_programs_library"
         for root, dirs, files in os.walk( simple_programs_folder ):
             for filename in files:
                 if filename.endswith( ".json" ):

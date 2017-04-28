@@ -51,7 +51,7 @@ class SelectExerciseScreen( Screen ):
 
     def read_exercises( self ):
         list_of_exercises = []
-        exercise_folder = "exercises"
+        exercise_folder = "exercises_and_metrics_library"
         for root, dirs, files in os.walk( exercise_folder ):
             for filename in files:
                 if filename.endswith( ".json" ):
