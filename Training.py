@@ -1,6 +1,8 @@
 from Exercise import *
 from Metric import *
 
+from exercises_and_metrics_types import *
+
 class Training( object ):
     """Single training consists of a number of exercises and
     some arbitrary data, such as duration, start time, end time, 

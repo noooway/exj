@@ -8,10 +8,7 @@ from kivy.uix.scrollview import ScrollView
 from kivy.uix.button import Button
 from kivy.uix.label import Label
 
-from ExerciseSetsRepsWeightsWidget import *
-from ExerciseRunningWidget import *
-from MetricWeightWidget import *
-
+from exercises_and_metrics_types import *
 from Training import *
 
 class TrainingScreen( Screen ):    
