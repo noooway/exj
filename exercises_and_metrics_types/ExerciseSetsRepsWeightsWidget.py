@@ -5,7 +5,7 @@ from kivy.uix.button import Button
 from kivy.uix.label import Label
 from kivy.uix.textinput import TextInput
 
-from Exercise import *
+from ExerciseSetsRepsWeights import *
 
 class ExerciseSetsRepsWeightsWidget( GridLayout ):
     def __init__( self, current_training_screen, **kwargs ):
