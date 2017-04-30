@@ -12,22 +12,35 @@ from kivy.uix.label import Label
 class SelectExerciseScreen( Screen ):
     def __init__( self, **kwargs ):
         super( SelectExerciseScreen, self ).__init__( **kwargs )
-        list_of_exercises = self.read_exercises()
+        dict_of_exercises = self.read_exercises()
         v_layout = BoxLayout( orientation = 'vertical',
                               spacing = 30 )
-        label = Label( text = 'Select an exercise:', size_hint_y = 0.2 )
+        label = Label( text = 'Select an exercise:', size_hint_y = 0.15 )
         v_layout.add_widget( label )
-        exc_grid = GridLayout( cols = 3,
-                               spacing = 5,
-                               row_default_height = 70,
-                               row_force_default = True,
+        exc_grid = GridLayout( cols = 1,
+                               spacing = 15,
                                size_hint_y = None )
-        for x in list_of_exercises:
-            btn =  Button( text = x['name'],
-                           on_press = self.exercise_button_pressed )
-            btn.exercise_widget_type = x['exercise_type'] + "Widget"
-            exc_grid.add_widget( btn )
-            
+        for category in sorted( dict_of_exercises.keys() ):
+            cat_grid = GridLayout( cols = 1, 
+                                   spacing = 15,
+                                   row_default_height = 20,
+                                   size_hint_y = None )
+            cat_grid.bind( minimum_height = cat_grid.setter('height'))
+            cat_label = Label( text = category, font_size='25sp', )
+            cat_grid.add_widget( cat_label )
+            cat_btn_grid = GridLayout( cols = 2,
+                                       spacing = 5,
+                                       row_default_height = 50,
+                                       row_force_default = True,
+                                       size_hint_y = None )
+            cat_btn_grid.bind( minimum_height = cat_btn_grid.setter('height'))
+            for x in dict_of_exercises[ category ]:
+                btn =  Button( text = x['name'],
+                               on_press = self.exercise_button_pressed )
+                btn.exercise_widget_type = x['exercise_type'] + "Widget"
+                cat_btn_grid.add_widget( btn )                
+            cat_grid.add_widget( cat_btn_grid )
+            exc_grid.add_widget( cat_grid )
         exc_grid.bind( minimum_height = exc_grid.setter('height') )
         scroll_for_exercises = ScrollView()
         scroll_for_exercises.add_widget( exc_grid )
@@ -50,7 +63,7 @@ class SelectExerciseScreen( Screen ):
         self.parent.current = 'training'
 
     def read_exercises( self ):
-        list_of_exercises = []
+        dict_of_exercises = {}
         exercise_folder = "exercises_and_metrics_library"
         for root, dirs, files in os.walk( exercise_folder ):
             for filename in files:
@@ -58,6 +71,11 @@ class SelectExerciseScreen( Screen ):
                     fullpath = os.path.join( root, filename )
                     with open( fullpath, 'rt' ) as infile:
                         dict_from_json = json.load( infile )
-                        list_of_exercises.extend( dict_from_json )
-        return( list_of_exercises )
+                        category = dict_from_json.get('category', 'Unknown')
+                        exercises = dict_from_json.get('exercises', [])
+                        print( category )
+                        print( exercises  )
+                        dict_of_exercises.setdefault( category, [] ).extend(
+                            exercises )        
+        return( dict_of_exercises )
 

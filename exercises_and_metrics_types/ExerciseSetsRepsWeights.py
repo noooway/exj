@@ -14,3 +14,9 @@ class ExerciseSetsRepsWeights( Exercise ):
     def init_from_json( cls, dict_from_json ):
         exercise = cls( **dict_from_json )
         return exercise
+
+    def rep_for_simple_program_selection( self ):
+        return "{}: {} sets, {} reps".format(
+            self.description['name'],
+            self.description['sets'],
+            self.description['reps'] )

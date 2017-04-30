@@ -5,11 +5,11 @@ from kivy.uix.button import Button
 from kivy.uix.label import Label
 from kivy.uix.textinput import TextInput
 
-from MetricWeight import *
+from MetricSingle import *
 
-class MetricWeightWidget( GridLayout ):
+class MetricSingleWidget( GridLayout ):
     def __init__( self, current_training_screen, **kwargs ):
-        super( MetricWeightWidget, self ).__init__( **kwargs )
+        super( MetricSingleWidget, self ).__init__( **kwargs )
         self.cols = 1
         self.spacing = 1
         self.row_default_height = 40
@@ -21,24 +21,24 @@ class MetricWeightWidget( GridLayout ):
                                   spacing = 30 )
         metric_label = Label( text = self.metric_name )
         input_layout.add_widget( metric_label )
-        self.weight_input = TextInput( hint_text = "80" )
-        self.weight_input.bind(
+        self.value_input = TextInput( hint_text = "" )
+        self.value_input.bind(
             text = current_training_screen.update_training_from_user_input )
-        input_layout.add_widget( self.weight_input )
+        input_layout.add_widget( self.value_input )
         del_metric_btn = Button( text = "Del Metr", size_hint_x = 0.3 )
         del_metric_btn.on_press = \
             lambda: current_training_screen.remove_exercise( self )
         input_layout.add_widget( del_metric_btn )
         self.add_widget( input_layout )
         self.comment = TextInput( hint_text = 'Comment Metric' )
-        self.comment.bind( text =
-                           current_training_screen.update_training_from_user_input )
+        self.comment.bind(
+            text = current_training_screen.update_training_from_user_input )
         self.add_widget( self.comment )
 
     def exercise_from_user_input( self ):
-        weight_input = self.weight_input.text
+        value_input = self.value_input.text
         comment = self.comment.text
-        metric = MetricWeight( name = self.metric_name,
-                               weight = weight_input,
+        metric = MetricSingle( name = self.metric_name,
+                               value = value_input,
                                comment = comment )
         return( metric )

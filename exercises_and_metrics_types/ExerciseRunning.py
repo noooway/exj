@@ -9,8 +9,14 @@ class ExerciseRunning( Exercise ):
                                                  times = times,
                                                  **description )
         self.essential_fields = ['name', 'intervals', 'distances', 'times' ]
-
+        
     @classmethod
     def init_from_json( cls, dict_from_json ):
         exercise = cls( **dict_from_json )
         return exercise
+
+    def rep_for_simple_program_selection( self ):
+        return "{}: {} intervals with distances {}".format(
+            self.description['name'],
+            self.description['intervals'],
+            self.description['distances'] )

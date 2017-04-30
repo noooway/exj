@@ -55,15 +55,10 @@ class TrainingScreen( Screen ):
         self.back_from_exc_selection = False
 
     def add_exercise( self, exercise_name, exercise_widget_type ):
-        if exercise_widget_type == 'ExerciseSetsRepsWeightsWidget': 
+        WidgetClass = globals().get( exercise_widget_type )
+        if WidgetClass:
             self.exercises_layout.add_widget(
-                ExerciseSetsRepsWeightsWidget( self, text = exercise_name ) )
-        elif exercise_widget_type == 'ExerciseRunningWidget': 
-            self.exercises_layout.add_widget(
-                ExerciseRunningWidget( self, text = exercise_name ) )
-        elif exercise_widget_type == 'MetricWeightWidget': 
-            self.exercises_layout.add_widget(
-                MetricWeightWidget( self, text = exercise_name ) )
+                WidgetClass( self, text = exercise_name ) )
         else:
             print( 'Unknown excercise type:', exercise_widget_type )
         

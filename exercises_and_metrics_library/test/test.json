@@ -1,6 +1,9 @@
-[
-  {
-    "name": "Test",
-    "exercise_type": "Test"
-  }
-]
+{
+    "category": "Test",
+    "exercises": [
+	{
+	    "name": "Test",
+	    "exercise_type": "Test"
+	}
+    ]
+}

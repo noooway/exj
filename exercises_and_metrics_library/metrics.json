@@ -1,0 +1,9 @@
+{
+    "category": "Metrics",
+    "exercises": [
+	{
+	    "name": "Weight",
+	    "exercise_type": "MetricSingle"
+	}
+    ]
+}

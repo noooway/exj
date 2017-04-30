@@ -56,11 +56,19 @@ class SimpleProgramsScreen( Screen ):
         description_layout.bind(
             minimum_height = description_layout.setter('height') )
         for i, tr in enumerate( simple_program.trainings ):
-            training_label = Label( text = "Training {0}:".format( i+1 ) )
+            training_label = Label(
+                text = "Training {0}:".format( i+1 ),
+                font_size='20sp',
+                halign="left" )
+            training_label.bind( size = training_label.setter('text_size'))
             description_layout.add_widget( training_label )
             for ex in tr.exercises:
-                ex_label = Label( text = str( ex ) )
+                ex_label = Label(
+                    text = "    " + ex.rep_for_simple_program_selection(),
+                    halign="left" )
+                ex_label.bind( size = ex_label.setter('text_size'))
                 description_layout.add_widget( ex_label )
+            
         program_layout.add_widget( description_layout )
         parent_layout.add_widget( program_layout )
 
