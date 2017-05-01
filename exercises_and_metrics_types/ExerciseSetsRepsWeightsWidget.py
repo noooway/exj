@@ -24,7 +24,8 @@ class ExerciseSetsRepsWeightsWidget( GridLayout ):
         title_layout.add_widget( Label( text = "Reps" ) )
         title_layout.add_widget( Label( text = "Weights" ) )
         del_excercise_btn = Button( text = "Del Exc", size_hint_x = 0.3 )
-        del_excercise_btn.on_press = lambda: current_training_screen.remove_exercise(self)
+        del_excercise_btn.on_press = \
+            lambda: current_training_screen.remove_exercise( self )
         title_layout.add_widget( del_excercise_btn )
         self.add_widget( title_layout )
         self.add_reps_weights_set( current_training_screen )
@@ -49,11 +50,8 @@ class ExerciseSetsRepsWeightsWidget( GridLayout ):
     def add_reps_weights_set( self,
                               current_training_screen,
                               index_in_layout = 0 ):
-        set_layout = GridLayout( rows = 1,
-                                 spacing = 30 )
-        #
+        set_layout = GridLayout( rows = 1, spacing = 30 )
         set_layout.height = 30
-        #
         pos_shift = Label( text='' )
         set_layout.add_widget( pos_shift )
         reps = TextInput( hint_text = '10' )

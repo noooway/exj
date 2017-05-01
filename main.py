@@ -13,6 +13,7 @@ from ViewProgressScreen import *
 from TrainingScreen import *
 from SelectExerciseScreen import *
 from JournalOverviewScreen import *
+from SpecificExerciseStatisticsScreen import *
 
 from Journal import *
 from SimpleProgram import *
@@ -47,6 +48,8 @@ class ExjApp(App):
         sm.add_widget( ViewProgressScreen( name='view_progress') )
         sm.add_widget( TrainingScreen( name='training') )
         sm.add_widget( SelectExerciseScreen( name='select_exercise') )
+        sm.add_widget(
+            SpecificExerciseStatisticsScreen( name='exercise_statistics'))
         sm.add_widget( JournalOverviewScreen( name='journal_overview') )
         return sm
 

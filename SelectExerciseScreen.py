@@ -71,11 +71,12 @@ class SelectExerciseScreen( Screen ):
                     fullpath = os.path.join( root, filename )
                     with open( fullpath, 'rt' ) as infile:
                         dict_from_json = json.load( infile )
-                        category = dict_from_json.get('category', 'Unknown')
+                        category = dict_from_json.get('category',
+                                                      'Unknown')
                         exercises = dict_from_json.get('exercises', [])
-                        print( category )
-                        print( exercises  )
-                        dict_of_exercises.setdefault( category, [] ).extend(
-                            exercises )        
+                        #print( category )
+                        #print( exercises  )
+                        dict_of_exercises.setdefault(
+                            category, [] ).extend( exercises )        
         return( dict_of_exercises )
 
