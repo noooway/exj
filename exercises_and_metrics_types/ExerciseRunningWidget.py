@@ -8,7 +8,8 @@ from kivy.uix.textinput import TextInput
 from ExerciseRunning import *
 
 class ExerciseRunningWidget( GridLayout ):
-    def __init__( self, current_training_screen, **kwargs ):
+    def __init__( self, exercise_running,
+                  current_training_screen, **kwargs ):
         super( ExerciseRunningWidget, self ).__init__( **kwargs )
         self.cols = 1
         self.spacing = 1
@@ -16,7 +17,7 @@ class ExerciseRunningWidget( GridLayout ):
         self.row_force_default = True
         self.size_hint_y = None
         self.bind( minimum_height = self.setter('height') )
-        self.exercise_name = kwargs['text']
+        self.exercise_name = exercise_running.description['name']
         title_layout = BoxLayout( orientation = 'horizontal',
                                   spacing = 30 )
         excercise_label = Label( text = self.exercise_name )
@@ -28,7 +29,9 @@ class ExerciseRunningWidget( GridLayout ):
             lambda: current_training_screen.remove_exercise( self )
         title_layout.add_widget( del_excercise_btn )
         self.add_widget( title_layout )
-        self.add_dist_time_interval( current_training_screen )
+        self.add_dist_time_intervals_from_exercise(
+            exercise_running,
+            current_training_screen )
         add_interval_btn_layout = BoxLayout( orientation = 'horizontal',
                                              spacing = 30 )
         add_interval_btn_layout.add_widget( Label(
@@ -41,23 +44,38 @@ class ExerciseRunningWidget( GridLayout ):
                 current_training_screen, index_in_layout = 2 ) ) )
         self.add_widget( add_interval_btn_layout ) 
         self.comment = TextInput( hint_text = 'Comment Exercise' )
-        self.comment.bind( text =
-                           current_training_screen.update_training_from_user_input )
+        self.comment.bind(
+            text =
+            current_training_screen.update_training_from_user_input )
         self.add_widget( self.comment )
 
-    def add_dist_time_interval( self, current_training_screen, index_in_layout = 0 ):
+    def add_dist_time_intervals_from_exercise( self, 
+            exercise_running, current_training_screen ):
+        for (dist, time) in zip(
+                exercise_running.description['distances'],
+                exercise_running.description['times'] ):
+            self.add_dist_time_interval( current_training_screen,
+                                         dist, time )
+        
+    def add_dist_time_interval( self,
+                                current_training_screen,
+                                hint_dist = '1.0',
+                                hint_time = '4:00',
+                                index_in_layout = 0 ):
         interval_layout = GridLayout( rows = 1, spacing = 30 )
         interval_layout.height = 30
         pos_shift = Label( text='' )
         interval_layout.add_widget( pos_shift )
-        distance = TextInput( hint_text = '1.0' )
+        distance = TextInput( hint_text = hint_dist )
         interval_layout.add_widget( distance )
-        time = TextInput( hint_text = '3:40' )
+        time = TextInput( hint_text = hint_time )
         interval_layout.add_widget( time )        
-        distance.bind( text =
-                       current_training_screen.update_training_from_user_input )
-        time.bind( text =
-                   current_training_screen.update_training_from_user_input )
+        distance.bind(
+            text =
+            current_training_screen.update_training_from_user_input )
+        time.bind(
+            text =
+            current_training_screen.update_training_from_user_input )
         del_button = Button( text = "Del Int", size_hint_x = 0.3 )
         del_button.on_press = lambda: self.remove_interval_widget(
             current_training_screen, interval_layout )
@@ -69,7 +87,7 @@ class ExerciseRunningWidget( GridLayout ):
         distances = []
         times = []
         for dist_time_interval in self.children[2:-1]:
-            dist_input = dist_time_interval.children[2].text            
+            dist_input = dist_time_interval.children[2].text
             time_input = dist_time_interval.children[1].text
             if dist_input is not None:
                 distances.insert( 0, dist_input )
@@ -83,7 +101,9 @@ class ExerciseRunningWidget( GridLayout ):
                                comment = comment )
         return( exc )
 
-    def remove_interval_widget( self, current_training_screen, interval_layout ):
+    def remove_interval_widget( self,
+                                current_training_screen,
+                                interval_layout ):
         self.remove_widget( interval_layout )
         current_training_screen.update_training_from_user_input()
         print( 'deleting' )

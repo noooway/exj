@@ -9,6 +9,8 @@ from kivy.uix.scrollview import ScrollView
 from kivy.uix.button import Button
 from kivy.uix.label import Label
 
+from exercises_and_metrics_types import *
+
 class SelectExerciseScreen( Screen ):
     def __init__( self, **kwargs ):
         super( SelectExerciseScreen, self ).__init__( **kwargs )
@@ -33,11 +35,12 @@ class SelectExerciseScreen( Screen ):
                                        row_default_height = 50,
                                        row_force_default = True,
                                        size_hint_y = None )
-            cat_btn_grid.bind( minimum_height = cat_btn_grid.setter('height'))
+            cat_btn_grid.bind(
+                minimum_height = cat_btn_grid.setter('height'))
             for x in dict_of_exercises[ category ]:
                 btn =  Button( text = x['name'],
                                on_press = self.exercise_button_pressed )
-                btn.exercise_widget_type = x['exercise_type'] + "Widget"
+                btn.exercise_type = x['exercise_type']
                 cat_btn_grid.add_widget( btn )                
             cat_grid.add_widget( cat_btn_grid )
             exc_grid.add_widget( cat_grid )
@@ -52,10 +55,13 @@ class SelectExerciseScreen( Screen ):
 
     def exercise_button_pressed( self, button ):
         exercise_name = button.text
-        exercise_widget_type = button.exercise_widget_type 
-        self.parent.get_screen('training').add_exercise(
-            exercise_name,
-            exercise_widget_type )
+        exercise_type = button.exercise_type
+        ExerciseClass = globals().get( exercise_type )
+        if ExerciseClass:
+            exc = ExerciseClass.construct_from_name( exercise_name )
+            self.parent.get_screen('training').add_exercise( exc )
+        else:
+            print( 'Unknown excercise type:', exercise_type )            
         self.parent.get_screen('training').back_from_exc_selection = True
         self.parent.current = 'training'
         

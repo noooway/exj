@@ -8,7 +8,8 @@ from kivy.uix.textinput import TextInput
 from ExerciseSetsRepsWeights import *
 
 class ExerciseSetsRepsWeightsWidget( GridLayout ):
-    def __init__( self, current_training_screen, **kwargs ):
+    def __init__( self, exercise_sets_reps_weights,
+                  current_training_screen, **kwargs ):
         super( ExerciseSetsRepsWeightsWidget, self ).__init__( **kwargs )
         self.cols = 1
         self.spacing = 1
@@ -16,7 +17,8 @@ class ExerciseSetsRepsWeightsWidget( GridLayout ):
         self.row_force_default = True
         self.size_hint_y = None
         self.bind( minimum_height = self.setter('height') )
-        self.exercise_name = kwargs['text']
+        self.exercise_name = \
+            exercise_sets_reps_weights.description['name']
         title_layout = BoxLayout( orientation = 'horizontal',
                                   spacing = 30 )
         excercise_label = Label( text = self.exercise_name )
@@ -28,9 +30,8 @@ class ExerciseSetsRepsWeightsWidget( GridLayout ):
             lambda: current_training_screen.remove_exercise( self )
         title_layout.add_widget( del_excercise_btn )
         self.add_widget( title_layout )
-        self.add_reps_weights_set( current_training_screen )
-        self.add_reps_weights_set( current_training_screen )
-        self.add_reps_weights_set( current_training_screen )
+        self.add_reps_weights_sets_from_exercise(
+            exercise_sets_reps_weights, current_training_screen )
         add_set_layout = BoxLayout( orientation = 'horizontal',
                                     spacing = 30 )
         add_set_layout.add_widget( Label(
@@ -43,28 +44,41 @@ class ExerciseSetsRepsWeightsWidget( GridLayout ):
                 current_training_screen, index_in_layout = 2 ) ) )
         self.add_widget( add_set_layout ) 
         self.comment = TextInput( hint_text = 'Comment Exercise' )
-        self.comment.bind( text =
-                           current_training_screen.update_training_from_user_input )
+        self.comment.bind(
+            text =
+            current_training_screen.update_training_from_user_input )
         self.add_widget( self.comment )
+
+    def add_reps_weights_sets_from_exercise( self, 
+            exercise_sets_reps_weights, current_training_screen ):
+        for (reps, weights) in zip(
+                exercise_sets_reps_weights.description['reps'],
+                exercise_sets_reps_weights.description['weights'] ):
+            self.add_reps_weights_set( current_training_screen,
+                                       reps, weights )
 
     def add_reps_weights_set( self,
                               current_training_screen,
+                              hint_reps = '10',
+                              hint_weights = '50',
                               index_in_layout = 0 ):
         set_layout = GridLayout( rows = 1, spacing = 30 )
         set_layout.height = 30
         pos_shift = Label( text='' )
         set_layout.add_widget( pos_shift )
-        reps = TextInput( hint_text = '10' )
+        reps = TextInput( hint_text = hint_reps )
         set_layout.add_widget( reps )
-        weights = TextInput( hint_text = '50' )
+        weights = TextInput( hint_text = hint_weights )
         set_layout.add_widget( weights )        
-        reps.bind( text =
-                   current_training_screen.update_training_from_user_input )
-        weights.bind( text =
-                      current_training_screen.update_training_from_user_input )
+        reps.bind(
+            text =
+            current_training_screen.update_training_from_user_input )
+        weights.bind(
+            text =
+            current_training_screen.update_training_from_user_input )
         del_button = Button( text = "Del Set", size_hint_x = 0.3 )
-        del_button.on_press = lambda: self.remove_set_widget( current_training_screen,
-                                                              set_layout )
+        del_button.on_press = lambda: self.remove_set_widget(
+            current_training_screen, set_layout )
         set_layout.add_widget( del_button )
         self.add_widget( set_layout, index = index_in_layout )
 
