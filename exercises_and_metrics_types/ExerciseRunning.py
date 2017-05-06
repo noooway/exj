@@ -8,8 +8,19 @@ class ExerciseRunning( Exercise ):
                                                  distances = distances,
                                                  times = times,
                                                  **description )
-        self.essential_fields = ['name', 'intervals', 'distances', 'times' ]
+        self.essential_fields = ['name', 'intervals',
+                                 'distances', 'times' ]
         
+
+    @classmethod
+    def construct_from_name( cls, exercise_name ):
+        intervals = 1
+        distances = ['1.0']
+        times = ['4:00']
+        exercise = cls( exercise_name, intervals,
+                        distances, times )
+        return exercise
+
     @classmethod
     def init_from_json( cls, dict_from_json ):
         exercise = cls( **dict_from_json )
@@ -20,3 +31,4 @@ class ExerciseRunning( Exercise ):
             self.description['name'],
             self.description['intervals'],
             self.description['distances'] )
+
