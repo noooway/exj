@@ -42,8 +42,12 @@ class ExerciseSetsRepsWeightsWidget( GridLayout ):
             size_hint = (0.775, 1.0),
             on_press = lambda x: self.add_reps_weights_set(
                 current_training_screen, index_in_layout = 2 ) ) )
-        self.add_widget( add_set_layout ) 
-        self.comment = TextInput( hint_text = 'Comment Exercise' )
+        self.add_widget( add_set_layout )
+        comment_text = \
+            exercise_sets_reps_weights.description.get(
+                'comment',
+                'Comment Exercise')
+        self.comment = TextInput( hint_text = comment_text )
         self.comment.bind(
             text =
             current_training_screen.update_training_from_user_input )
@@ -51,6 +55,10 @@ class ExerciseSetsRepsWeightsWidget( GridLayout ):
 
     def add_reps_weights_sets_from_exercise( self, 
             exercise_sets_reps_weights, current_training_screen ):
+        # print( '===', 'reps',
+        #        exercise_sets_reps_weights.description['reps'],
+        #        'weigh',
+        #        exercise_sets_reps_weights.description['weights'] )
         for (reps, weights) in zip(
                 exercise_sets_reps_weights.description['reps'],
                 exercise_sets_reps_weights.description['weights'] ):
@@ -66,9 +74,9 @@ class ExerciseSetsRepsWeightsWidget( GridLayout ):
         set_layout.height = 30
         pos_shift = Label( text='' )
         set_layout.add_widget( pos_shift )
-        reps = TextInput( hint_text = hint_reps )
+        reps = TextInput( hint_text = str( hint_reps ) )
         set_layout.add_widget( reps )
-        weights = TextInput( hint_text = hint_weights )
+        weights = TextInput( hint_text = str( hint_weights ) )
         set_layout.add_widget( weights )        
         reps.bind(
             text =

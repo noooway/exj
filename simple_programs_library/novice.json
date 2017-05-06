@@ -1,41 +1,41 @@
 {
-  "name": "Novice",
-  "trainings": [
-    {
-      "exercises": [
-        {
-          "weights": 16,
-          "reps": 5,
-          "sets": 3,
-          "name": "Pull Ups",
-          "type": "ExerciseSetsRepsWeights"
-        },
-        {
-          "weights": 0,
-          "reps": 25,
-          "sets": 3,
-          "name": "Dips",
-          "type": "ExerciseSetsRepsWeights"
-        }
-      ]
-    },
-    {
-      "exercises": [
-        {
-          "weights": 16,
-          "reps": 5,
-          "sets": 3,
-          "name": "Squat",
-          "type": "ExerciseSetsRepsWeights"
-        },
-        {
-          "weights": 0,
-          "reps": 25,
-          "sets": 3,
-          "name": "Hyperextenstion",
-          "type": "ExerciseSetsRepsWeights"
-        }
-      ]
-    }
-  ]
+    "name": "Novice",
+    "trainings": [
+	{
+	    "exercises": [
+		{
+		    "name": "Pull Ups",
+		    "type": "ExerciseSetsRepsWeights",
+		    "sets": 3,
+		    "reps": [5],
+		    "weights": [16]
+		},
+		{
+		    "name": "Dips",
+		    "type": "ExerciseSetsRepsWeights",
+		    "sets": 3,
+		    "reps": [25],
+		    "weights": [0]
+		}
+	    ]
+	},
+	{
+	    "exercises": [
+		{
+		    "name": "Squat",
+		    "type": "ExerciseSetsRepsWeights",
+		    "sets": 3,
+		    "reps": [5],
+		    "weights": [16]
+		},
+		{
+		    "name": "Hyperextenstion",
+		    "type": "ExerciseSetsRepsWeights",
+		    "sets": 3,
+		    "reps": [25],
+		    "weights": [0]
+		}
+	    ]
+	}
+    ]
 }

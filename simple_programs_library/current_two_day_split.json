@@ -1,132 +1,132 @@
 {
-  "name": "Current two-day split",
-  "trainings": [
-    {
-      "exercises": [
-        {
-          "intervals": 1,
-          "times": "4:00",
-          "distances": 1.0,
-          "name": "Warm-up Running",
-          "type": "ExerciseRunning"
-        },
-        {
-          "weights": 0,
-          "reps": 8,
-          "sets": 3,
-          "name": "Pull Ups",
-          "type": "ExerciseSetsRepsWeights"
-        },
-        {
-          "weights": 0,
-          "reps": 8,
-          "sets": 3,
-          "name": "Dips",
-          "type": "ExerciseSetsRepsWeights"
-        },
-        {
-          "weights": 0,
-          "reps": 8,
-          "sets": 3,
-          "name": "Leverage Iso Row",
-          "type": "ExerciseSetsRepsWeights"
-        },
-        {
-          "weights": 50,
-          "reps": 8,
-          "sets": 3,
-          "name": "Barbell Bench Press",
-          "type": "ExerciseSetsRepsWeights"
-        },
-        {
-          "weights": 50,
-          "reps": 8,
-          "sets": 3,
-          "name": "T-Bar Row",
-          "type": "ExerciseSetsRepsWeights"
-        },
-        {
-          "weights": 50,
-          "reps": 8,
-          "sets": 3,
-          "name": "Triceps Pushdown",
-          "type": "ExerciseSetsRepsWeights"
-        },
-        {
-          "weights": 50,
-          "reps": 8,
-          "sets": 3,
-          "name": "Hammer Curl",
-          "type": "ExerciseSetsRepsWeights"
-        }
-      ]
-    },
-    {
-      "exercises": [
-        {
-          "intervals": 1,
-          "times": "4:00",
-          "distances": 1.0,
-          "name": "Warm-up Running",
-          "type": "ExerciseRunning"
-        },
-        {
-          "weights": 16,
-          "reps": 5,
-          "sets": 3,
-          "name": "Leg Press",
-          "type": "ExerciseSetsRepsWeights"
-        },
-        {
-          "weights": 0,
-          "reps": 25,
-          "sets": 3,
-          "name": "Hack Squat",
-          "type": "ExerciseSetsRepsWeights"
-        },
-        {
-          "weights": 0,
-          "reps": 25,
-          "sets": 3,
-          "name": "Calf Raise",
-          "type": "ExerciseSetsRepsWeights"
-        },
-        {
-          "weights": 0,
-          "reps": 25,
-          "sets": 3,
-          "name": "Hyperextenstion",
-          "type": "ExerciseSetsRepsWeights"
-        },
-        {
-          "weights": 0,
-          "reps": 25,
-          "sets": 3,
-          "name": "Romanian Deadlift",
-          "type": "ExerciseSetsRepsWeights"
-        },
-        {
-          "weights": 0,
-          "reps": 25,
-          "sets": 3,
-          "name": "Deadlift",
-          "type": "ExerciseSetsRepsWeights"
-        },
-        {
-          "weights": 0,
-          "reps": 25,
-          "sets": 3,
-          "name": "Decline Crunch",
-          "type": "ExerciseSetsRepsWeights"
-        },
-        {
-          "weights": 0,
-          "reps": 25,
-          "sets": 3,
-          "name": "Hanging Leg Raise",
-          "type": "ExerciseSetsRepsWeights"
-        }
-      ]
-    }
-  ]
+    "name": "Current two-day split",
+    "trainings": [
+	{
+	    "exercises": [
+		{
+		    "name": "Warm-up Running",
+		    "type": "ExerciseRunning",
+		    "intervals": 1,
+		    "times": [ "4:00" ],
+		    "distances": [ 1.0 ]
+		},
+		{
+		    "name": "Pull Ups",
+		    "type": "ExerciseSetsRepsWeights",
+		    "sets": 3,
+		    "reps": [ 10, 10, 10 ],
+		    "weights": [ 0, 0, 0 ]
+		},
+		{
+		    "name": "Dips",
+		    "type": "ExerciseSetsRepsWeights",
+		    "sets": 3,
+		    "reps": [ 10, 10, 10 ],
+		    "weights": [ 0, 0, 0 ]
+		},
+		{
+		    "name": "Leverage Iso Row",
+		    "type": "ExerciseSetsRepsWeights",
+		    "sets": 3,
+		    "reps": [ 8, 8, 8 ],
+		    "weights": [ 30, 30, 30 ]
+		},
+		{
+		    "name": "Barbell Bench Press",
+		    "type": "ExerciseSetsRepsWeights",
+		    "sets": 3,
+		    "reps": [ 8, 8, 8 ],
+		    "weights": [ 50, 50, 50 ]
+		},
+		{
+		    "name": "T-Bar Row",
+		    "type": "ExerciseSetsRepsWeights",
+		    "sets": 3,
+		    "reps": [ 8, 8, 8 ],
+		    "weights": [ 50, 50, 50 ]	    
+		},
+		{
+		    "name": "Triceps Pushdown",
+		    "type": "ExerciseSetsRepsWeights",
+		    "sets": 3,
+		    "weights": [ 50, 50, 50 ],
+		    "reps": [ 8, 8, 8 ]
+		},
+		{
+		    "name": "Hammer Curl",
+		    "type": "ExerciseSetsRepsWeights",
+		    "sets": 3,
+		    "weights": [ 50, 50, 50 ],
+		    "reps": [ 8, 8, 8 ]
+		}
+	    ]
+	},
+	{
+	    "exercises": [
+		{
+		    "name": "Warm-up Running",
+		    "type": "ExerciseRunning",
+		    "intervals": 1,
+		    "times": [ "4:00" ],
+		    "distances": [ 1.0 ]
+		},
+		{
+		    "name": "Leg Press",
+		    "type": "ExerciseSetsRepsWeights",
+		    "sets": 3,
+		    "reps": [ 12,12,12,12 ],
+		    "weights": [ 50, 100, 150, 200 ]
+		},
+		{
+		    "name": "Hack Squat",
+		    "type": "ExerciseSetsRepsWeights",
+		    "sets": 3,
+		    "reps": [ 12, 12, 12, 12 ],
+		    "weights": [ 30, 50, 60, 70 ]
+		},
+		{
+		    "name": "Calf Raise",
+		    "type": "ExerciseSetsRepsWeights",
+		    "sets": 3,
+		    "reps": [ 10, 10, 10, 10 ],
+		    "weights": [ 30, 60, 70, 80 ]
+		},
+		{
+		    "name": "Hyperextenstion",
+		    "type": "ExerciseSetsRepsWeights",
+		    "sets": 3,
+		    "reps": [ 15, 15, 15 ],
+		    "weights": [ 0, 0, 0 ]
+		},
+		{
+		    "name": "Romanian Deadlift",
+		    "type": "ExerciseSetsRepsWeights",
+		    "sets": 3,
+		    "reps": [ 10, 10, 10 ],
+		    "weights": [ 30, 50, 60 ]
+		},
+		{
+		    "name": "Deadlift",
+		    "type": "ExerciseSetsRepsWeights",
+		    "sets": 3,
+		    "reps": [ 10, 10, 10 ],
+		    "weights": [ 60, 70, 70 ]
+		},
+		{
+		    "name": "Decline Crunch",
+		    "type": "ExerciseSetsRepsWeights",
+		    "sets": 3,
+		    "reps": [ 25 ],
+		    "weights": [ 0 ]
+		},
+		{
+		    "name": "Hanging Leg Raise",
+		    "type": "ExerciseSetsRepsWeights",
+		    "sets": 3,
+		    "reps": [ 25 ],
+		    "weights": [ 0 ]
+		}
+	    ]
+	}
+    ]
 }

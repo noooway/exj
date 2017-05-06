@@ -42,8 +42,11 @@ class ExerciseRunningWidget( GridLayout ):
             size_hint = (0.775, 1.0),
             on_press = lambda x: self.add_dist_time_interval(
                 current_training_screen, index_in_layout = 2 ) ) )
-        self.add_widget( add_interval_btn_layout ) 
-        self.comment = TextInput( hint_text = 'Comment Exercise' )
+        self.add_widget( add_interval_btn_layout )
+        comment_text = exercise_running.description.get(
+                'comment',
+                'Comment Exercise')
+        self.comment = TextInput( hint_text = comment_text )
         self.comment.bind(
             text =
             current_training_screen.update_training_from_user_input )
@@ -66,9 +69,9 @@ class ExerciseRunningWidget( GridLayout ):
         interval_layout.height = 30
         pos_shift = Label( text='' )
         interval_layout.add_widget( pos_shift )
-        distance = TextInput( hint_text = hint_dist )
+        distance = TextInput( hint_text = str( hint_dist ) )
         interval_layout.add_widget( distance )
-        time = TextInput( hint_text = hint_time )
+        time = TextInput( hint_text = str( hint_time ) )
         interval_layout.add_widget( time )        
         distance.bind(
             text =

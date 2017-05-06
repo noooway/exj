@@ -109,6 +109,7 @@ class TrainingScreen( Screen ):
     def on_pre_enter( self ):
         self.last_training_index = \
           App.get_running_app().simple_program_last_training
+        journal = App.get_running_app().journal
         if self.following_plan and not self.back_from_exc_selection:
             self.add_training_changer()
             current_program = App.get_running_app().simple_program
@@ -117,8 +118,15 @@ class TrainingScreen( Screen ):
                 len( current_program.trainings )
             training = \
               current_program.trainings[ self.last_training_index ]
-            for ex in training.exercises:
-                self.add_exercise( ex )
+            for default_ex in training.exercises:                
+                last_similar_ex = journal.lookup_last_similar_exercise(
+                    default_ex,
+                    current_program.get_name(),
+                    self.last_training_index )
+                if last_similar_ex:
+                    self.add_exercise( last_similar_ex )
+                else:
+                    self.add_exercise( default_ex )
         self.back_from_exc_selection = False
                 
     def on_enter( self ):
@@ -144,24 +152,39 @@ class TrainingScreen( Screen ):
 
     def select_prev_training( self ):
         self.exercises_layout.clear_widgets()
+        journal = App.get_running_app().journal
         current_program = App.get_running_app().simple_program
         self.last_training_index = \
             ( self.last_training_index - 1 ) % \
             len( current_program.trainings )
         training = current_program.trainings[ self.last_training_index ]
-        for ex in training.exercises:
-            self.add_exercise( ex )
-        
+        for default_ex in training.exercises:
+            last_similar_ex = journal.lookup_last_similar_exercise(
+                default_ex,
+                current_program.get_name(),
+                self.last_training_index )
+            if last_similar_ex:
+                self.add_exercise( last_similar_ex )
+            else:
+                self.add_exercise( default_ex )        
 
     def select_next_training( self ):
         self.exercises_layout.clear_widgets()
+        journal = App.get_running_app().journal
         current_program = App.get_running_app().simple_program
         self.last_training_index = \
             ( self.last_training_index + 1 ) % \
             len( current_program.trainings )
         training = current_program.trainings[ self.last_training_index ]
-        for ex in training.exercises:
-            self.add_exercise( ex )
+        for default_ex in training.exercises:
+            last_similar_ex = journal.lookup_last_similar_exercise(
+                default_ex,
+                current_program.get_name(),
+                self.last_training_index )
+            if last_similar_ex:
+                self.add_exercise( last_similar_ex )
+            else:
+                self.add_exercise( default_ex )        
 
         
     def add_time_information_to_training( self ):
@@ -190,4 +213,3 @@ class TrainingScreen( Screen ):
     def remove_exercise( self, exercise_widget ):
         self.exercises_layout.remove_widget( exercise_widget )
         self.update_training_from_user_input()
-        print( 'del' )

@@ -28,7 +28,8 @@ class Journal( object ):
 
     def repr_for_json_dump( self ):
         for_json = {}        
-        trainings_for_json_dump = [ x.repr_for_json_dump() for x in self.trainings ]
+        trainings_for_json_dump = \
+            [ x.repr_for_json_dump() for x in self.trainings ]
         for_json.update( self.description )
         for_json.update( { 'trainings': trainings_for_json_dump } )
         return for_json
@@ -47,3 +48,25 @@ class Journal( object ):
                 journal.add_training( Training.init_from_json( x ) )
             journal.add_description( **dict_from_json )
         return journal
+
+    def lookup_last_similar_exercise( self, exercise,
+                                      program_name = None,
+                                      last_training_index = None ):
+        if program_name is not None and \
+           last_training_index is not None:
+            for tr in reversed( self.trainings ):
+                if tr.description.get( 'training_program' ) == \
+                   program_name \
+                   and \
+                   tr.description.get( 'training_index_in_program' ) == \
+                   last_training_index:
+                    for ex in reversed( tr.exercises ):
+                        if ex.description.get('name') == \
+                           exercise.description.get('name'):
+                            return( ex )
+        for tr in reversed( self.trainings ):
+            for ex in reversed( tr.exercises ):
+                if ex.description.get('name') == \
+                   exercise.description.get('name'):
+                    return( ex )
+        return None
