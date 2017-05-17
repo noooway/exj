@@ -70,3 +70,13 @@ class Journal( object ):
                    exercise.description.get('name'):
                     return( ex )
         return None
+
+
+    def get_dict_of_exercise_names_and_types( self ):
+        ex_names_and_types = {}
+        for tr in self.trainings:
+            for ex in tr.exercises:
+                ex_names_and_types.setdefault(
+                    ex.description.get("name"),
+                    ex.description.get("type") )
+        return( ex_names_and_types )

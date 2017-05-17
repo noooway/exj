@@ -7,15 +7,15 @@
 		    "name": "Pull Ups",
 		    "type": "ExerciseSetsRepsWeights",
 		    "sets": 3,
-		    "reps": [5],
-		    "weights": [16]
+		    "reps": [5, 5, 5],
+		    "weights": [0, 0, 0]
 		},
 		{
 		    "name": "Dips",
 		    "type": "ExerciseSetsRepsWeights",
 		    "sets": 3,
-		    "reps": [25],
-		    "weights": [0]
+		    "reps": [25, 25, 25],
+		    "weights": [0, 0, 0]
 		}
 	    ]
 	},
@@ -25,15 +25,15 @@
 		    "name": "Squat",
 		    "type": "ExerciseSetsRepsWeights",
 		    "sets": 3,
-		    "reps": [5],
-		    "weights": [16]
+		    "reps": [5, 5, 5],
+		    "weights": [0]
 		},
 		{
 		    "name": "Hyperextenstion",
 		    "type": "ExerciseSetsRepsWeights",
 		    "sets": 3,
-		    "reps": [25],
-		    "weights": [0]
+		    "reps": [25, 25, 25],
+		    "weights": [0, 0, 0]
 		}
 	    ]
 	}
