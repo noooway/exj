@@ -58,11 +58,11 @@ class TrainingScreen( Screen ):
 
     def add_exercise( self, exercise ):
         exercise_type_name = exercise.__class__.__name__
-        exercise_widget_name = exercise_type_name + 'Widget'
-        WidgetClass = globals().get( exercise_widget_name )
-        if WidgetClass:
-            exc_widget = WidgetClass( exercise, self )
-            self.exercises_layout.add_widget( exc_widget )
+        exercise_input_widget_name = exercise_type_name + 'InputWidget'
+        InputWidgetClass = globals().get( exercise_input_widget_name )
+        if InputWidgetClass:
+            exc_input_widget = InputWidgetClass( exercise, self )
+            self.exercises_layout.add_widget( exc_input_widget )
         else:
             print( exercise_type_name,
                    " doesn't have corresponding widget type" )

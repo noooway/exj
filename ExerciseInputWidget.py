@@ -1,6 +1,6 @@
-class ExerciseWidget( BoxLayout ):
+class ExerciseInputWidget( BoxLayout ):
     def __init__( self, **kwargs ):
-        super( ExerciseWidget, self ).__init__( **kwargs )
+        super( ExerciseInputWidget, self ).__init__( **kwargs )
         self.orientation = 'vertical'
         self.spacing = 1
         excercise_label = Label( text = kwargs.get('text') )

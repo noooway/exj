@@ -8,7 +8,7 @@ from kivy.uix.scatterlayout import ScatterLayout
 from kivy.uix.button import Button
 from kivy.uix.label import Label
 from kivy.uix.spinner import Spinner
-from kivy.uix.widget import Widget
+
 from kivy.uix.textinput import TextInput
 from kivy.uix.scrollview import ScrollView
 
@@ -33,18 +33,8 @@ class SpecificExerciseStatisticsScreen( Screen ):
         spinner_layout.add_widget( self.exercise_spinner )
         v_layout.add_widget( spinner_layout )
         #
-        drawing_layout = RelativeLayout()
-        #drawing_layout = ScatterLayout()
-        self.drawing_widget = Widget()
-        drawing_layout.add_widget( self.drawing_widget )
-        self.drawing_widget.canvas.add( Color( 1, 1, 1) )
-        self.drawing_widget.bg_rect = Rectangle(
-            pos = (0, 0),
-            size = ( self.drawing_widget.width,
-                     self.drawing_widget.height ) )
-        self.drawing_widget.canvas.add( self.drawing_widget.bg_rect )
-        self.drawing_widget.bind( size = self.drawing_widget_update_rect )
-        v_layout.add_widget( drawing_layout )
+        self.drawing_layout = RelativeLayout()
+        v_layout.add_widget( self.drawing_layout )
         #
         back_button = Button( text = 'Back', size_hint_y = 0.2 )
         back_button.on_press = self.goto_view_progress
@@ -53,10 +43,6 @@ class SpecificExerciseStatisticsScreen( Screen ):
 
     def goto_view_progress( self ):
         self.parent.current = 'view_progress'
-
-    def drawing_widget_update_rect(self, *args):
-        #self.drawing_widget.bg_rect.pos = self.drawing_widget.pos
-        self.drawing_widget.bg_rect.size = self.drawing_widget.size
 
     def on_pre_enter( self ):
         self.populate_spinner_with_exercises()
@@ -73,13 +59,11 @@ class SpecificExerciseStatisticsScreen( Screen ):
     def draw_exercise( self, *rest ):        
         ex_name = self.exercise_spinner.text
         ex_type = self.exercise_spinner.ex_names_and_types.get( ex_name )
-        ExClass = globals().get( ex_type )
-        if ExClass:
-            journal = App.get_running_app().journal
-            drawing_instructions = \
-                    ExClass.gen_drawing_instructions(
-                        ex_name, journal,
-                        self.drawing_widget.bg_rect.size )
-            self.drawing_widget.canvas.clear()
-            self.drawing_widget.canvas.add( self.drawing_widget.bg_rect )
-            self.drawing_widget.canvas.add( drawing_instructions ) 
+        if ex_type:
+            ex_statistics_widget = ex_type + "StatisticsWidget"
+            ExStatWidgetClass = globals().get( ex_statistics_widget )
+            if ExStatWidgetClass:
+                journal = App.get_running_app().journal
+                self.drawing_layout.clear_widgets()
+                self.drawing_layout.add_widget(
+                    ExStatWidgetClass( ex_name, journal ) )

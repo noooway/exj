@@ -7,10 +7,10 @@ from kivy.uix.textinput import TextInput
 
 from ExerciseRunning import *
 
-class ExerciseRunningWidget( GridLayout ):
+class ExerciseRunningInputWidget( GridLayout ):
     def __init__( self, exercise_running,
                   current_training_screen, **kwargs ):
-        super( ExerciseRunningWidget, self ).__init__( **kwargs )
+        super( ExerciseRunningInputWidget, self ).__init__( **kwargs )
         self.cols = 1
         self.spacing = 1
         self.row_default_height = 40

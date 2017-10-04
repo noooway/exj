@@ -7,10 +7,10 @@ from kivy.uix.textinput import TextInput
 
 from ExerciseSetsRepsWeights import *
 
-class ExerciseSetsRepsWeightsWidget( GridLayout ):
+class ExerciseSetsRepsWeightsInputWidget( GridLayout ):
     def __init__( self, exercise_sets_reps_weights,
                   current_training_screen, **kwargs ):
-        super( ExerciseSetsRepsWeightsWidget, self ).__init__( **kwargs )
+        super( ExerciseSetsRepsWeightsInputWidget, self ).__init__( **kwargs )
         self.cols = 1
         self.spacing = 1
         self.row_default_height = 40
