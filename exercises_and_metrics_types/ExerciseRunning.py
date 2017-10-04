@@ -1,13 +1,18 @@
 from Exercise import *
 
+from kivy.graphics import *
+from kivy.core.text import Label as CoreLabel
+#https://groups.google.com/forum/#!topic/kivy-users/zRCjfhBcX4c
+
 class ExerciseRunning( Exercise ):
     def __init__( self, name, intervals, distances, times, **description ):
-        super( ExerciseRunning, self ).__init__( type = type(self).__name__,
-                                                 name = name,
-                                                 intervals = intervals,
-                                                 distances = distances,
-                                                 times = times,
-                                                 **description )
+        super( ExerciseRunning, self ).__init__(
+            type = type(self).__name__,
+            name = name,
+            intervals = intervals,
+            distances = distances,
+            times = times,
+            **description )
         self.essential_fields = ['name', 'intervals',
                                  'distances', 'times' ]
         
@@ -31,4 +36,3 @@ class ExerciseRunning( Exercise ):
             self.description['name'],
             self.description['intervals'],
             self.description['distances'] )
-

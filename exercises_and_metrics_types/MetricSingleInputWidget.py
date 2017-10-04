@@ -7,10 +7,10 @@ from kivy.uix.textinput import TextInput
 
 from MetricSingle import *
 
-class MetricSingleWidget( GridLayout ):
+class MetricSingleInputWidget( GridLayout ):
     def __init__( self, metric_single,
                   current_training_screen, **kwargs ):
-        super( MetricSingleWidget, self ).__init__( **kwargs )
+        super( MetricSingleInputWidget, self ).__init__( **kwargs )
         self.cols = 1
         self.spacing = 1
         self.row_default_height = 40
