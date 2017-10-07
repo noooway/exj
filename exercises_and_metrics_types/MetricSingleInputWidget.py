@@ -40,6 +40,7 @@ class MetricSingleInputWidget( GridLayout ):
         self.add_widget( self.comment )
 
     def exercise_from_user_input( self ):
+        # todo: add input check
         value_input = self.value_input.text
         comment = self.comment.text
         metric = MetricSingle( name = self.metric_name,

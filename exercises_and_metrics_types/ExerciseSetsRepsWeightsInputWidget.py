@@ -91,6 +91,7 @@ class ExerciseSetsRepsWeightsInputWidget( GridLayout ):
         self.add_widget( set_layout, index = index_in_layout )
 
     def exercise_from_user_input( self ):
+        # todo: add input check
         sets = len( self.children[2:-1] )
         reps = []
         weights = []

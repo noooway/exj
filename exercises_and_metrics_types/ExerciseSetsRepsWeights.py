@@ -4,10 +4,10 @@ class ExerciseSetsRepsWeights( Exercise ):
     def __init__( self, name, sets, reps, weights, **description ):
         super( ExerciseSetsRepsWeights, self ).__init__(
             type = type(self).__name__,
-            name = name,
-            sets = sets,
-            reps = reps,
-            weights = weights,
+            name = name, # type: str
+            sets = sets, # type: int
+            reps = reps, # type: List[ int ]
+            weights = weights, # type: List[ float ]
             **description )
         self.essential_fields = ['name', 'sets', 'reps', 'weights' ]
 

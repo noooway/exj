@@ -86,6 +86,7 @@ class ExerciseRunningInputWidget( GridLayout ):
         self.add_widget( interval_layout, index = index_in_layout )
 
     def exercise_from_user_input( self ):
+        # todo: add input check
         intervals = len( self.children[2:-1] )
         distances = []
         times = []

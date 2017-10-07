@@ -3,8 +3,8 @@ from Metric import *
 class MetricSingle( Metric ):
     def __init__( self, name, value, **description ):
         super( MetricSingle, self ).__init__( type = type(self).__name__,
-                                              name = name,
-                                              value = value,
+                                              name = name, # type: str
+                                              value = value, # type: float
                                               **description )
         self.essential_fields = ['name', 'value' ]
 
