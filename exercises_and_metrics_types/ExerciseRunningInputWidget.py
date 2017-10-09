@@ -102,7 +102,7 @@ class ExerciseRunningInputWidget( GridLayout ):
                                intervals = intervals, 
                                distances = distances,
                                times = times,
-                               comment = comment )
+                               description_dict = { 'comment': comment } )
         return( exc )
 
     def remove_interval_widget( self,

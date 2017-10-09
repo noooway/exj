@@ -5,16 +5,16 @@ from Training import *
 class Journal( object ):
     """Journal is a collection of trainings"""
 
-    def __init__( self, *trainings, **journal_description ):
-        self.trainings = list( trainings )
-        self.description = journal_description
+    def __init__( self, trainings_list, journal_description_dict ):
+        self.trainings = trainings_list
+        self.description = journal_description_dict
 
     def add_training( self, training ):
         """Add single training. Only one is expected."""
         self.trainings.append( training )
 
-    def add_description( self, **description ):
-        self.description.update( description )
+    def add_description( self, description_dict ):
+        self.description.update( description_dict )
 
     def __repr__( self ):
         return "Journal: \n" + \
@@ -40,13 +40,13 @@ class Journal( object ):
 
     @classmethod
     def load_journal( cls, filename ):
-        journal = cls()
+        journal = cls( [], {} )
         with open( filename, 'rt' ) as infile:
             dict_from_json = json.load( infile )
             trainings = dict_from_json.pop('trainings')
             for x in trainings:
                 journal.add_training( Training.init_from_json( x ) )
-            journal.add_description( **dict_from_json )
+            journal.add_description( dict_from_json )
         return journal
 
     def lookup_last_similar_exercise( self, exercise,

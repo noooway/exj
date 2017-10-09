@@ -45,5 +45,5 @@ class MetricSingleInputWidget( GridLayout ):
         comment = self.comment.text
         metric = MetricSingle( name = self.metric_name,
                                value = value_input,
-                               comment = comment )
+                               description_dict = { 'comment': comment } )
         return( metric )
