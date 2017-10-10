@@ -15,7 +15,7 @@ class TrainingScreen( Screen ):
     def __init__( self, **kwargs ):
         super( TrainingScreen, self ).__init__( **kwargs )
         self.excercise_widgets = []
-        self.training = Training()
+        self.training = Training( [], {} )
         self.main_layout = BoxLayout( orientation = 'vertical',
                               spacing = 5 )
         label = Label( text = 'List of exercises',
@@ -73,13 +73,13 @@ class TrainingScreen( Screen ):
             exc = exc_widget.exercise_from_user_input()
             exercises.insert( 0, exc )
         training_comment = self.training_comment.text
-        self.training = Training( *exercises, comment=training_comment )
+        self.training = Training( exercises, {'comment': training_comment} )
         
     def goto_select_exercise( self ):
         self.parent.current = 'select_exercise'
         
     def goto_start_exercising( self ):
-        self.training = Training()
+        self.training = Training( [], {} )
         self.exercises_layout.clear_widgets()
         self.training_comment.text = ''
         self.parent.current = 'start_exercising'
@@ -97,7 +97,7 @@ class TrainingScreen( Screen ):
         App.get_running_app().simple_program_last_training = \
             self.last_training_index
         App.get_running_app().write_config()
-        self.training = Training()
+        self.training = Training( [], {} )
         self.exercises_layout.clear_widgets()
         self.training_comment.text = ''
         if self.following_plan:
@@ -191,11 +191,12 @@ class TrainingScreen( Screen ):
         training_date = self.start_time.strftime('%d-%m-%Y')
         self.end_time = datetime.now()
         duration = self.end_time - self.start_time
-        self.training.add_description(
-            date = training_date,
-            start_time = str( self.start_time ),
-            end_time = str( self.end_time ),
-            duration = str( duration ) )
+        self.training.add_description( {
+            'date': training_date,
+            'start_time': str( self.start_time ),
+            'end_time': str( self.end_time ),
+            'duration': str( duration )
+        } )
 
     def add_info_on_used_program( self ):
         if self.following_plan:
@@ -205,9 +206,10 @@ class TrainingScreen( Screen ):
         else:
             used_training_program_name = None
             training_index_in_program = None
-        self.training.add_description(
-            training_program = used_training_program_name,
-            training_index_in_program = training_index_in_program )
+        self.training.add_description( {
+            'training_program': used_training_program_name,
+            'training_index_in_program': training_index_in_program
+        } )
         
 
     def remove_exercise( self, exercise_widget ):

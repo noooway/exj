@@ -107,7 +107,7 @@ class ExerciseSetsRepsWeightsInputWidget( GridLayout ):
                                        sets = sets,
                                        reps = reps,
                                        weights = weights,
-                                       comment = comment )
+                                       description_dict = { 'comment': comment } )
         return( exc )
 
     def remove_set_widget( self, current_training_screen, set_layout ):

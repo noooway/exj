@@ -8,16 +8,16 @@ class Training( object ):
     some arbitrary data, such as duration, start time, end time, 
     comments etc."""
     
-    def __init__( self, *exercises, **training_description ):
-        self.exercises = list( exercises )
-        self.description = training_description
+    def __init__( self, exercises_list, training_description_dict ):
+        self.exercises = exercises_list
+        self.description = training_description_dict
 
     def add_exercise( self, exercise ):
         """Add single exercise. Only one is expected."""
         self.exercises.append( exercise )
 
-    def add_description( self, **description ):
-        self.description.update( description )
+    def add_description( self, description_dict ):
+        self.description.update( description_dict )
 
     def repr_for_json_dump( self ):
         for_json = {}        
@@ -38,11 +38,11 @@ class Training( object ):
 
     @classmethod
     def init_from_json( cls, dict_from_json ):
-        training = cls()
+        training = cls( [], {} )
         exercises = dict_from_json.pop('exercises')
         for x in exercises:
             exc_class_name = x.pop("type", "Exercise")
             exc_class = globals()[exc_class_name]
             training.add_exercise( exc_class.init_from_json( x ) )
-        training.add_description( **dict_from_json )
+        training.add_description( dict_from_json )
         return training

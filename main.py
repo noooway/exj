@@ -32,7 +32,7 @@ class ExjApp(App):
         if os.path.isfile( self.journal_file ):            
             self.journal = Journal.load_journal( self.journal_file )
         else:
-            self.journal = Journal()
+            self.journal = Journal( [], {} )
         self.dict_of_simple_programs = self.read_simple_programs()
         self.simple_program = self.dict_of_simple_programs.get(
             self.simple_program_name )        
