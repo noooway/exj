@@ -22,3 +22,6 @@ Common gym exercises are supported out of the box, other types can be added if n
 
 JSON file format is used to store the exercise journal on a disk. 
 This allows to easily convert it to other formats if necessary.
+
+A more detailed description of [current functionality](https://github.com/noooway/exj/wiki/Current-Functionality),
+[installation instructions](https://github.com/noooway/exj/wiki/Installation) and other documentation can be found in the [wiki](https://github.com/noooway/exj/wiki).
